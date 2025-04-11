@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+/* Cairo Font Family */
+@font-face {
+  font-family: "Cairo";
+  src: url("/fonts/Cairo/Cairo-VariableFont_slnt\,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Oswald Font Family */
+@font-face {
+  font-family: "Oswald";
+  src: url("/fonts/Oswald/Oswald-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  body {
+    @apply bg-[#111827] text-white;
+  }
+
+  html {
+    font-family: "Cairo", system-ui, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Oswald", system-ui, sans-serif;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[#111827];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[#DC2626] rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-[#B91C1C];
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .hero-heading {
+    font-family: "Oswald", system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+
+  .nav-link {
+    font-family: "Cairo", system-ui, sans-serif;
+    font-weight: 600;
+  }
+}
+
+/* For consistent backdrop-filter support */
+.backdrop-blur-md {
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+/* For gradient text */
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
