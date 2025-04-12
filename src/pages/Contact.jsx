@@ -1,4 +1,5 @@
 import { useState } from "react";
+import hoursImage from "../assets/24h.png";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -124,7 +125,7 @@ const Contact = () => {
                     PHONE
                   </h3>
                   <p className="mt-1 text-[#9CA3AF] text-sm sm:text-base">
-                    012 10855655
+                    01210855655
                   </p>
                 </div>
               </div>
@@ -193,62 +194,65 @@ const Contact = () => {
               SEND US A MESSAGE
             </h2>
             <form className="space-y-5" onSubmit={handleSubmit}>
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-white mb-2"
-                >
-                  Name
-                </label>
+              <div className="relative">
                 <input
                   type="text"
                   id="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="mt-1 block w-full bg-[#111827] border border-[#374151] rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-[#DC2626] focus:border-transparent transition-colors duration-300"
+                  className="peer block w-full bg-[#111827] border border-[#374151] rounded-md shadow-sm py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-[#DC2626] focus:border-transparent transition-all duration-300 placeholder-transparent"
+                  placeholder="Name"
                   required
                 />
+                <label
+                  htmlFor="name"
+                  className="absolute left-2 -top-2.5 px-1 text-sm text-[#9CA3AF] transition-all duration-300 peer-placeholder-shown:text-base peer-placeholder-shown:text-[#9CA3AF] peer-placeholder-shown:top-3.5 peer-placeholder-shown:left-4 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-sm peer-focus:text-[#DC2626] peer-focus:bg-[#1F2937] rounded-sm"
+                >
+                  Name
+                </label>
               </div>
 
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-white mb-2"
-                >
-                  Email
-                </label>
+              <div className="relative">
                 <input
                   type="email"
                   id="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="mt-1 block w-full bg-[#111827] border border-[#374151] rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-[#DC2626] focus:border-transparent transition-colors duration-300"
+                  className="peer block w-full bg-[#111827] border border-[#374151] rounded-md shadow-sm py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-[#DC2626] focus:border-transparent transition-all duration-300 placeholder-transparent"
+                  placeholder="Email"
                   required
                 />
+                <label
+                  htmlFor="email"
+                  className="absolute left-2 -top-2.5 px-1 text-sm text-[#9CA3AF] transition-all duration-300 peer-placeholder-shown:text-base peer-placeholder-shown:text-[#9CA3AF] peer-placeholder-shown:top-3.5 peer-placeholder-shown:left-4 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-sm peer-focus:text-[#DC2626] peer-focus:bg-[#1F2937] rounded-sm"
+                >
+                  Email
+                </label>
               </div>
 
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-white mb-2"
-                >
-                  Message
-                </label>
+              <div className="relative">
                 <textarea
                   id="message"
                   rows={5}
                   value={formData.message}
                   onChange={handleChange}
-                  className="mt-1 block w-full bg-[#111827] border border-[#374151] rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-[#DC2626] focus:border-transparent transition-colors duration-300 resize-none"
+                  className="peer block w-full bg-[#111827] border border-[#374151] rounded-md shadow-sm py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-[#DC2626] focus:border-transparent transition-all duration-300 resize-none placeholder-transparent"
+                  placeholder="Message"
                   required
                 ></textarea>
+                <label
+                  htmlFor="message"
+                  className="absolute left-2 -top-2.5 px-1 text-sm text-[#9CA3AF] transition-all duration-300 peer-placeholder-shown:text-base peer-placeholder-shown:text-[#9CA3AF] peer-placeholder-shown:top-3.5 peer-placeholder-shown:left-4 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-sm peer-focus:text-[#DC2626] peer-focus:bg-[#1F2937] rounded-sm"
+                >
+                  Message
+                </label>
               </div>
 
               <button
                 type="submit"
                 className="w-full bg-[#DC2626] text-white py-3 px-4 rounded-md hover:bg-[#B91C1C] transition duration-300 font-bold flex items-center justify-center group"
               >
-                <span>Send Message</span>
+                <span>Send</span>
                 <svg
                   className="ml-2 w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-1"
                   fill="none"
@@ -269,66 +273,37 @@ const Contact = () => {
 
         {/* Hours of Operation Section */}
         <div className="mt-12 sm:mt-16">
-          <div className="bg-[#1F2937] p-6 sm:p-8 rounded-lg shadow-xl transform transition-all duration-300 hover:shadow-2xl mt-8">
+          <div className="bg-[#1F2937] p-6 sm:p-8 rounded-lg shadow-xl transform transition-all duration-300 hover:shadow-2xl">
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 font-['Oswald']">
               HOURS OF OPERATION
             </h2>
-            <div className="space-y-3">
-              <div className="flex justify-between items-center bg-[#111827]/30 p-2 rounded">
-                <span className="text-[#9CA3AF] text-sm sm:text-base">
-                  Monday:
-                </span>
-                <span className="text-white text-sm sm:text-base font-medium">
-                  Open 24 hours
-                </span>
-              </div>
-              <div className="flex justify-between items-center bg-[#111827]/30 p-2 rounded">
-                <span className="text-[#9CA3AF] text-sm sm:text-base">
-                  Tuesday:
-                </span>
-                <span className="text-white text-sm sm:text-base font-medium">
-                  Open 24 hours
-                </span>
-              </div>
-              <div className="flex justify-between items-center bg-[#111827]/30 p-2 rounded">
-                <span className="text-[#9CA3AF] text-sm sm:text-base">
-                  Wednesday:
-                </span>
-                <span className="text-white text-sm sm:text-base font-medium">
-                  Open 24 hours
-                </span>
-              </div>
-              <div className="flex justify-between items-center bg-[#111827]/30 p-2 rounded">
-                <span className="text-[#9CA3AF] text-sm sm:text-base">
-                  Thursday:
-                </span>
-                <span className="text-white text-sm sm:text-base font-medium">
-                  Open 24 hours
-                </span>
-              </div>
-              <div className="flex justify-between items-center bg-[#111827]/30 p-2 rounded">
-                <span className="text-[#9CA3AF] text-sm sm:text-base">
-                  Friday:
-                </span>
-                <span className="text-white text-sm sm:text-base font-medium">
-                  Open 24 hours
-                </span>
-              </div>
-              <div className="flex justify-between items-center bg-[#111827]/30 p-2 rounded">
-                <span className="text-[#9CA3AF] text-sm sm:text-base">
-                  Saturday:
-                </span>
-                <span className="text-white text-sm sm:text-base font-medium">
-                  Open 24 hours
-                </span>
-              </div>
-              <div className="flex justify-between items-center bg-[#111827]/30 p-2 rounded">
-                <span className="text-[#9CA3AF] text-sm sm:text-base">
-                  Sunday:
-                </span>
-                <span className="text-white text-sm sm:text-base font-medium">
-                  Open 24 hours
-                </span>
+            <div className="flex justify-center">
+              <div className="flex flex-col items-center">
+                <div className="w-60 h-60 flex items-center justify-center">
+                  <img
+                    src={hoursImage}
+                    alt="Open 24 Hours"
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      // If image fails to load, show fallback content
+                      e.target.style.display = "none";
+                      e.target.parentNode.innerHTML = `
+                        <div class="w-36 h-36 rounded-full bg-[#DC2626] border-4 border-white flex items-center justify-center">
+                          <div class="text-center">
+                            <div class="text-white text-lg font-bold">OPEN</div>
+                            <div class="text-white text-4xl font-black font-['Oswald']">24</div>
+                            <div class="text-white text-xs">HOURS</div>
+                          </div>
+                        </div>
+                      `;
+                    }}
+                  />
+                </div>
+
+                <p className="text-[#9CA3AF] text-center mt-6 text-sm sm:text-base max-w-md">
+                  Our fitness facility is available to members 24/7, all days of
+                  the week including weekends and holidays.
+                </p>
               </div>
             </div>
           </div>
@@ -336,11 +311,8 @@ const Contact = () => {
 
         {/* Map Section */}
         <div className="mt-12 sm:mt-16">
-          <div className="bg-[#1F2937] p-4 sm:p-6 rounded-lg shadow-xl mb-6">
-            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 font-['Oswald']">
-              FIND US
-            </h2>
-            <div className="relative w-full h-64 sm:h-80 md:h-96 rounded-lg overflow-hidden">
+          <div className="bg-[#1F2937] p-2 sm:p-4 rounded-md shadow-xl mb-6">
+            <div className="relative w-full h-[50vh] md:h-[75vh] rounded-md overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3419.025443360017!2d33.80466727622767!3d31.122783974389587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14fdd334a26db7bb%3A0xd4d5ef01f79e4d17!2sIron%20gym!5e0!3m2!1sen!2sus!4v1718306153999!5m2!1sen!2sus&mode=dark"
                 width="100%"

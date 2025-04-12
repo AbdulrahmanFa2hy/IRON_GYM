@@ -19,6 +19,7 @@ const Products = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [isVisible, setIsVisible] = useState(false);
   const [activeFilters, setActiveFilters] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   // Animation effect on page load
   useEffect(() => {
@@ -26,6 +27,20 @@ const Products = () => {
       setIsVisible(true);
     }, 100);
     return () => clearTimeout(timer);
+  }, []);
+
+  // Check window width on resize
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+      if (window.innerWidth >= 768) {
+        setActiveFilters(true);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Initialize on component mount
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // Products data
@@ -173,7 +188,6 @@ const Products = () => {
     setCategory("all");
     setSortBy("featured");
     setSearchQuery("");
-    setActiveFilters(false);
   };
 
   return (
@@ -202,8 +216,11 @@ const Products = () => {
           <button
             onClick={toggleFilters}
             className="w-full bg-[#1F2937] text-white py-3 px-4 rounded-md flex items-center justify-between"
+            aria-expanded={activeFilters}
           >
-            <span className="font-medium">Filter & Sort</span>
+            <span className="font-medium">
+              {activeFilters ? "Hide Filter & Sort" : "Show Filter & Sort"}
+            </span>
             <svg
               className={`w-5 h-5 transition-transform duration-300 ${
                 activeFilters ? "rotate-180" : ""
@@ -224,159 +241,161 @@ const Products = () => {
 
         {/* Filters and Search */}
         <div
-          className={`bg-[#1F2937] rounded-xl p-4 sm:p-6 mb-6 sm:mb-8 shadow-lg transition-all duration-500 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          className={`bg-[#1F2937] rounded-xl mb-6 sm:mb-8 shadow-lg md:block ${
+            activeFilters ? "block" : "hidden"
           } ${
-            activeFilters || window.innerWidth >= 768
-              ? "max-h-[500px] opacity-100"
-              : "max-h-0 overflow-hidden opacity-0 md:max-h-[500px] md:opacity-100"
+            isVisible
+              ? "opacity-100 transition-opacity duration-300"
+              : "opacity-0"
           }`}
           style={{ transitionDelay: "100ms" }}
         >
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-            <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
-              {/* Search */}
-              <div className="relative w-full sm:w-auto sm:flex-1 md:max-w-xs">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <svg
-                    className="h-5 w-5 text-[#9CA3AF]"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                    />
-                  </svg>
+          <div className="p-4 sm:p-6">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+                {/* Search */}
+                <div className="relative w-full sm:w-auto sm:flex-1 md:w-md">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <svg
+                      className="h-5 w-5 text-[#9CA3AF]"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                      />
+                    </svg>
+                  </div>
+                  <input
+                    type="text"
+                    className="w-full pl-10 pr-4 py-3 rounded-lg border border-[#374151] bg-[#111827] text-white placeholder-[#9CA3AF] focus:outline-none focus:ring-2 focus:ring-[#DC2626]"
+                    placeholder="Search products..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                  />
                 </div>
-                <input
-                  type="text"
-                  className="w-full pl-10 pr-4 py-2 rounded-lg border border-[#374151] bg-[#111827] text-white placeholder-[#9CA3AF] focus:outline-none focus:ring-2 focus:ring-[#DC2626]"
-                  placeholder="Search products..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
+
+                {/* Category Filter */}
+                <div className="w-full sm:w-auto sm:flex-1 md:max-w-xs">
+                  <select
+                    value={category}
+                    onChange={(e) => setCategory(e.target.value)}
+                    className="w-full p-2 rounded-lg border border-[#374151] bg-[#111827] text-white focus:outline-none focus:ring-2 focus:ring-[#DC2626]"
+                  >
+                    <option value="all">All Categories</option>
+                    <option value="supplements">Supplements</option>
+                    <option value="equipment">Equipment</option>
+                    <option value="accessories">Accessories</option>
+                  </select>
+                </div>
               </div>
 
-              {/* Category Filter */}
-              <div className="w-full sm:w-auto sm:flex-1 md:max-w-xs">
+              {/* Sort */}
+              <div className="w-full sm:flex-1 lg:w-auto lg:max-w-xs">
                 <select
-                  value={category}
-                  onChange={(e) => setCategory(e.target.value)}
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value)}
                   className="w-full p-2 rounded-lg border border-[#374151] bg-[#111827] text-white focus:outline-none focus:ring-2 focus:ring-[#DC2626]"
                 >
-                  <option value="all">All Categories</option>
-                  <option value="supplements">Supplements</option>
-                  <option value="equipment">Equipment</option>
-                  <option value="accessories">Accessories</option>
+                  <option value="featured">Featured</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="rating">Highest Rated</option>
                 </select>
               </div>
             </div>
 
-            {/* Sort */}
-            <div className="w-full sm:flex-1 lg:w-auto lg:max-w-xs">
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                className="w-full p-2 rounded-lg border border-[#374151] bg-[#111827] text-white focus:outline-none focus:ring-2 focus:ring-[#DC2626]"
-              >
-                <option value="featured">Featured</option>
-                <option value="price-low">Price: Low to High</option>
-                <option value="price-high">Price: High to Low</option>
-                <option value="rating">Highest Rated</option>
-              </select>
-            </div>
-          </div>
-
-          {/* Active Filters Display & Reset Button */}
-          {(category !== "all" || sortBy !== "featured" || searchQuery) && (
-            <div className="mt-4 pt-4 border-t border-[#374151] flex flex-wrap items-center justify-between">
-              <div className="flex flex-wrap gap-2 mb-2 sm:mb-0">
-                {category !== "all" && (
-                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#374151] text-white">
-                    {category.charAt(0).toUpperCase() + category.slice(1)}
-                    <button
-                      onClick={() => setCategory("all")}
-                      className="ml-1 text-[#9CA3AF] hover:text-white"
-                    >
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+            {/* Active Filters Display & Reset Button */}
+            {(category !== "all" || sortBy !== "featured" || searchQuery) && (
+              <div className="mt-4 pt-4 border-t border-[#374151] flex flex-wrap items-center justify-between">
+                <div className="flex flex-wrap gap-2 mb-2 sm:mb-0">
+                  {category !== "all" && (
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#374151] text-white">
+                      {category.charAt(0).toUpperCase() + category.slice(1)}
+                      <button
+                        onClick={() => setCategory("all")}
+                        className="ml-1 text-[#9CA3AF] hover:text-white"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M6 18L18 6M6 6l12 12"
-                        />
-                      </svg>
-                    </button>
-                  </span>
-                )}
-                {sortBy !== "featured" && (
-                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#374151] text-white">
-                    {sortBy === "price-low"
-                      ? "Price: Low to High"
-                      : sortBy === "price-high"
-                      ? "Price: High to Low"
-                      : "Highest Rated"}
-                    <button
-                      onClick={() => setSortBy("featured")}
-                      className="ml-1 text-[#9CA3AF] hover:text-white"
-                    >
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                        <svg
+                          className="w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M6 18L18 6M6 6l12 12"
+                          />
+                        </svg>
+                      </button>
+                    </span>
+                  )}
+                  {sortBy !== "featured" && (
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#374151] text-white">
+                      {sortBy === "price-low"
+                        ? "Price: Low to High"
+                        : sortBy === "price-high"
+                        ? "Price: High to Low"
+                        : "Highest Rated"}
+                      <button
+                        onClick={() => setSortBy("featured")}
+                        className="ml-1 text-[#9CA3AF] hover:text-white"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M6 18L18 6M6 6l12 12"
-                        />
-                      </svg>
-                    </button>
-                  </span>
-                )}
-                {searchQuery && (
-                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#374151] text-white">
-                    Search: "{searchQuery}"
-                    <button
-                      onClick={() => setSearchQuery("")}
-                      className="ml-1 text-[#9CA3AF] hover:text-white"
-                    >
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                        <svg
+                          className="w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M6 18L18 6M6 6l12 12"
+                          />
+                        </svg>
+                      </button>
+                    </span>
+                  )}
+                  {searchQuery && (
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#374151] text-white">
+                      Search: "{searchQuery}"
+                      <button
+                        onClick={() => setSearchQuery("")}
+                        className="ml-1 text-[#9CA3AF] hover:text-white"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M6 18L18 6M6 6l12 12"
-                        />
-                      </svg>
-                    </button>
-                  </span>
-                )}
+                        <svg
+                          className="w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M6 18L18 6M6 6l12 12"
+                          />
+                        </svg>
+                      </button>
+                    </span>
+                  )}
+                </div>
+                <button
+                  onClick={resetFilters}
+                  className="text-sm text-[#DC2626] hover:text-white transition-colors duration-300"
+                >
+                  Reset All Filters
+                </button>
               </div>
-              <button
-                onClick={resetFilters}
-                className="text-sm text-[#DC2626] hover:text-white transition-colors duration-300"
-              >
-                Reset All Filters
-              </button>
-            </div>
-          )}
+            )}
+          </div>
         </div>
 
         {/* Products Grid */}

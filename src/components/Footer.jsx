@@ -96,7 +96,7 @@ const Footer = () => {
           </div>
 
           {/* Contact */}
-          <div className="mt-2 sm:mt-0">
+          <div className="mt-2 sm:mt-0 lg:mx-auto">
             <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-white font-['Oswald']">
               CONTACT
             </h3>
@@ -123,7 +123,9 @@ const Footer = () => {
                   ></path>
                 </svg>
                 <span className="text-[#9CA3AF] text-xs sm:text-sm">
-                  123 Fitness Street, Gym City, GC 12345
+                  4RF4+5RQ, Qesm Thaleth Al Arish
+                  <br />
+                  North Sinai Governorate 8954625
                 </span>
               </li>
               <li className="flex items-start">
@@ -142,7 +144,7 @@ const Footer = () => {
                   ></path>
                 </svg>
                 <span className="text-[#9CA3AF] text-xs sm:text-sm">
-                  +1 (555) 123-4567
+                  012 10855655
                 </span>
               </li>
               <li className="flex items-start">
@@ -161,43 +163,38 @@ const Footer = () => {
                   ></path>
                 </svg>
                 <span className="text-[#9CA3AF] text-xs sm:text-sm">
-                  info@irongym.com
+                  contact@irongym.com
                 </span>
               </li>
             </ul>
           </div>
 
           {/* Hours */}
-          <div className="mt-2 sm:mt-0">
-            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-white font-['Oswald']">
-              HOURS
-            </h3>
-            <ul className="space-y-3">
-              <li className="flex justify-between items-center bg-[#111827]/30 p-2 rounded">
-                <span className="text-[#9CA3AF] text-xs sm:text-sm">
-                  Monday - Friday:
+          <div className="mt-2 sm:mt-0 flex lg:justify-center items-center">
+            <div className="flex flex-col lg:items-center">
+              <div className="flex items-center space-x-2">
+                <svg
+                  className="h-4 w-4 sm:h-5 sm:w-5 text-[#DC2626]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+                <span className="text-white text-sm sm:text-base font-medium">
+                  OPEN 24 HOURS
                 </span>
-                <span className="text-white text-xs sm:text-sm font-medium">
-                  5:00 AM - 10:00 PM
-                </span>
-              </li>
-              <li className="flex justify-between items-center bg-[#111827]/30 p-2 rounded">
-                <span className="text-[#9CA3AF] text-xs sm:text-sm">
-                  Saturday:
-                </span>
-                <span className="text-white text-xs sm:text-sm font-medium">
-                  7:00 AM - 8:00 PM
-                </span>
-              </li>
-              <li className="flex justify-between items-center bg-[#111827]/30 p-2 rounded">
-                <span className="text-[#9CA3AF] text-xs sm:text-sm">
-                  Sunday:
-                </span>
-                <span className="text-white text-xs sm:text-sm font-medium">
-                  8:00 AM - 6:00 PM
-                </span>
-              </li>
-            </ul>
+              </div>
+              <span className="text-[#9CA3AF] text-xs sm:text-sm mt-2 text-center">
+                7 days a week, including holidays
+              </span>
+            </div>
           </div>
         </div>
 
