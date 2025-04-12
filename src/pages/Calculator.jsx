@@ -94,25 +94,25 @@ const Calculator = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#111827] py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+    <div className="min-h-screen bg-[#111827] pt-20 pb-12 px-4 sm:px-6 md:px-8 lg:pt-24">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-10 md:mb-16">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-4 font-['Oswald']">
             Fitness <span className="text-[#DC2626]">Calculators</span>
           </h1>
-          <div className="w-24 h-1 bg-[#DC2626] mx-auto mb-6"></div>
-          <p className="text-[#9CA3AF] text-lg max-w-3xl mx-auto">
+          <div className="w-16 sm:w-24 h-1 bg-[#DC2626] mx-auto mb-4 md:mb-6"></div>
+          <p className="text-[#9CA3AF] text-sm sm:text-base md:text-lg max-w-3xl mx-auto">
             Use our fitness calculators to track your progress and optimize your
             training
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {/* BMI Calculator */}
-          <div className="bg-[#1F2937] rounded-lg p-6 shadow-xl">
-            <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+          <div className="bg-[#1F2937] rounded-lg p-4 sm:p-6 shadow-xl transition-transform hover:shadow-2xl hover:-translate-y-1 duration-300">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center">
               <svg
-                className="w-6 h-6 mr-2 text-[#DC2626]"
+                className="w-5 h-5 sm:w-6 sm:h-6 mr-2 text-[#DC2626]"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -155,7 +155,7 @@ const Calculator = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-[#DC2626] text-white py-2 px-4 rounded-md hover:bg-[#B91C1C] transition duration-300"
+                className="w-full bg-[#DC2626] text-white py-2 px-4 rounded-md hover:bg-[#B91C1C] transition duration-300 font-bold"
               >
                 Calculate BMI
               </button>
@@ -175,10 +175,10 @@ const Calculator = () => {
           </div>
 
           {/* TDEE Calculator */}
-          <div className="bg-[#1F2937] rounded-lg p-6 shadow-xl">
-            <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+          <div className="bg-[#1F2937] rounded-lg p-4 sm:p-6 shadow-xl transition-transform hover:shadow-2xl hover:-translate-y-1 duration-300">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center">
               <svg
-                className="w-6 h-6 mr-2 text-[#DC2626]"
+                className="w-5 h-5 sm:w-6 sm:h-6 mr-2 text-[#DC2626]"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -192,7 +192,7 @@ const Calculator = () => {
               </svg>
               TDEE Calculator
             </h2>
-            <form onSubmit={calculateTDEE} className="space-y-4">
+            <form onSubmit={calculateTDEE} className="space-y-3 sm:space-y-4">
               <div>
                 <label className="block text-white text-sm font-medium mb-2">
                   Weight (kg)
@@ -265,7 +265,7 @@ const Calculator = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-[#DC2626] text-white py-2 px-4 rounded-md hover:bg-[#B91C1C] transition duration-300 mt-6"
+                className="w-full bg-[#DC2626] text-white py-2 px-4 rounded-md hover:bg-[#B91C1C] transition duration-300 mt-4 sm:mt-6 font-bold"
               >
                 Calculate TDEE
               </button>
@@ -286,10 +286,10 @@ const Calculator = () => {
           </div>
 
           {/* One-Rep Max Calculator */}
-          <div className="bg-[#1F2937] rounded-lg p-6 shadow-xl">
-            <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+          <div className="bg-[#1F2937] rounded-lg p-4 sm:p-6 shadow-xl transition-transform hover:shadow-2xl hover:-translate-y-1 duration-300 sm:col-span-2 lg:col-span-1">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center">
               <svg
-                className="w-6 h-6 mr-2 text-[#DC2626]"
+                className="w-5 h-5 sm:w-6 sm:h-6 mr-2 text-[#DC2626]"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -333,7 +333,7 @@ const Calculator = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-[#DC2626] text-white py-2 px-4 rounded-md hover:bg-[#B91C1C] transition duration-300"
+                className="w-full bg-[#DC2626] text-white py-2 px-4 rounded-md hover:bg-[#B91C1C] transition duration-300 font-bold"
               >
                 Calculate 1RM
               </button>
@@ -354,28 +354,28 @@ const Calculator = () => {
         </div>
 
         {/* Explanation Section */}
-        <div className="mt-16 bg-[#1F2937] rounded-lg p-8 shadow-xl">
-          <h2 className="text-2xl font-bold text-white mb-6">
+        <div className="mt-10 sm:mt-12 lg:mt-16 bg-[#1F2937] rounded-lg p-4 sm:p-6 md:p-8 shadow-xl">
+          <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 md:mb-6 font-['Oswald']">
             Understanding the Calculators
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="text-xl font-semibold text-[#DC2626] mb-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+            <div className="bg-[#111827]/50 p-4 rounded-lg">
+              <h3 className="text-lg md:text-xl font-semibold text-[#DC2626] mb-2">
                 BMI Calculator
               </h3>
-              <p className="text-[#9CA3AF]">
+              <p className="text-[#9CA3AF] text-sm sm:text-base">
                 Body Mass Index (BMI) is a measure of body fat based on height
                 and weight. It's a screening tool that can indicate whether you
                 are underweight, normal weight, overweight, or obese.
               </p>
             </div>
 
-            <div>
-              <h3 className="text-xl font-semibold text-[#DC2626] mb-2">
+            <div className="bg-[#111827]/50 p-4 rounded-lg">
+              <h3 className="text-lg md:text-xl font-semibold text-[#DC2626] mb-2">
                 TDEE Calculator
               </h3>
-              <p className="text-[#9CA3AF]">
+              <p className="text-[#9CA3AF] text-sm sm:text-base">
                 Total Daily Energy Expenditure (TDEE) estimates how many
                 calories you burn per day. It accounts for your basal metabolic
                 rate and physical activity level to determine your maintenance
@@ -383,11 +383,11 @@ const Calculator = () => {
               </p>
             </div>
 
-            <div>
-              <h3 className="text-xl font-semibold text-[#DC2626] mb-2">
+            <div className="bg-[#111827]/50 p-4 rounded-lg md:col-span-2 lg:col-span-1">
+              <h3 className="text-lg md:text-xl font-semibold text-[#DC2626] mb-2">
                 1RM Calculator
               </h3>
-              <p className="text-[#9CA3AF]">
+              <p className="text-[#9CA3AF] text-sm sm:text-base">
                 One Repetition Maximum (1RM) estimates the maximum weight you
                 can lift for a single repetition of an exercise. This helps
                 track strength progress and determine appropriate training

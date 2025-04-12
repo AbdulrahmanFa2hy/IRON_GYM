@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0F1420] text-white pt-12 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-[#0F1420] text-white pt-10 sm:pt-12 pb-6 sm:pb-8 px-4 sm:px-6 md:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6 md:gap-8">
           {/* Logo and description */}
-          <div className="col-span-1 md:col-span-2 lg:col-span-1">
-            <Link to="/" className="flex items-center mb-4 group">
+          <div className="col-span-1 sm:col-span-2 lg:col-span-1">
+            <Link to="/" className="flex items-center mb-4 sm:mb-6 group">
               <img
-                src="/logo.jpg"
+                src="/android-chrome-192x192.png"
                 alt="IRONGYM"
                 className="h-8 sm:h-10 w-auto mr-2"
               />
@@ -20,20 +20,20 @@ const Footer = () => {
                 GYM
               </span>
             </Link>
-            <p className="text-[#9CA3AF] text-sm sm:text-base mt-4 mb-6 max-w-md">
+            <p className="text-[#9CA3AF] text-sm sm:text-base mt-2 sm:mt-4 mb-4 sm:mb-6 max-w-md">
               We are dedicated to helping our members achieve their fitness
               goals and live healthier lives. Our state-of-the-art facilities
               and expert trainers are here to support you on your fitness
               journey.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-3 sm:space-x-4">
               {/* Social Media Icons */}
               <a
                 href="#"
-                className="text-[#9CA3AF] hover:text-[#DC2626] transition-colors duration-300"
+                className="bg-[#111827] text-[#9CA3AF] hover:text-[#DC2626] hover:bg-[#111827]/70 p-2 sm:p-3 rounded-full transition-all duration-300"
               >
                 <svg
-                  className="w-5 h-5 sm:w-6 sm:h-6"
+                  className="w-4 h-4 sm:w-5 sm:h-5"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -47,10 +47,10 @@ const Footer = () => {
               </a>
               <a
                 href="#"
-                className="text-[#9CA3AF] hover:text-[#DC2626] transition-colors duration-300"
+                className="bg-[#111827] text-[#9CA3AF] hover:text-[#DC2626] hover:bg-[#111827]/70 p-2 sm:p-3 rounded-full transition-all duration-300"
               >
                 <svg
-                  className="w-5 h-5 sm:w-6 sm:h-6"
+                  className="w-4 h-4 sm:w-5 sm:h-5"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -60,10 +60,10 @@ const Footer = () => {
               </a>
               <a
                 href="#"
-                className="text-[#9CA3AF] hover:text-[#DC2626] transition-colors duration-300"
+                className="bg-[#111827] text-[#9CA3AF] hover:text-[#DC2626] hover:bg-[#111827]/70 p-2 sm:p-3 rounded-full transition-all duration-300"
               >
                 <svg
-                  className="w-5 h-5 sm:w-6 sm:h-6"
+                  className="w-4 h-4 sm:w-5 sm:h-5"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -77,10 +77,10 @@ const Footer = () => {
               </a>
               <a
                 href="#"
-                className="text-[#9CA3AF] hover:text-[#DC2626] transition-colors duration-300"
+                className="bg-[#111827] text-[#9CA3AF] hover:text-[#DC2626] hover:bg-[#111827]/70 p-2 sm:p-3 rounded-full transition-all duration-300"
               >
                 <svg
-                  className="w-5 h-5 sm:w-6 sm:h-6"
+                  className="w-4 h-4 sm:w-5 sm:h-5"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -95,64 +95,15 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="mt-4 sm:mt-0">
-            <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-white">
-              Quick Links
-            </h3>
-            <ul className="space-y-2 sm:space-y-3">
-              <li>
-                <Link
-                  to="/"
-                  className="text-[#9CA3AF] hover:text-[#DC2626] transition-colors duration-300 text-sm sm:text-base"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/classes"
-                  className="text-[#9CA3AF] hover:text-[#DC2626] transition-colors duration-300 text-sm sm:text-base"
-                >
-                  Classes
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/membership"
-                  className="text-[#9CA3AF] hover:text-[#DC2626] transition-colors duration-300 text-sm sm:text-base"
-                >
-                  Membership
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/calculator"
-                  className="text-[#9CA3AF] hover:text-[#DC2626] transition-colors duration-300 text-sm sm:text-base"
-                >
-                  Calculators
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/contact"
-                  className="text-[#9CA3AF] hover:text-[#DC2626] transition-colors duration-300 text-sm sm:text-base"
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
           {/* Contact */}
-          <div className="mt-4 sm:mt-0">
-            <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-white">
-              Contact
+          <div className="mt-2 sm:mt-0">
+            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-white font-['Oswald']">
+              CONTACT
             </h3>
-            <ul className="space-y-2 sm:space-y-3">
+            <ul className="space-y-3">
               <li className="flex items-start">
                 <svg
-                  className="w-5 h-5 text-[#DC2626] mt-0.5 mr-2 flex-shrink-0"
+                  className="w-4 h-4 sm:w-5 sm:h-5 text-[#DC2626] mt-0.5 mr-2 flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -171,13 +122,13 @@ const Footer = () => {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   ></path>
                 </svg>
-                <span className="text-[#9CA3AF] text-sm sm:text-base">
+                <span className="text-[#9CA3AF] text-xs sm:text-sm">
                   123 Fitness Street, Gym City, GC 12345
                 </span>
               </li>
               <li className="flex items-start">
                 <svg
-                  className="w-5 h-5 text-[#DC2626] mt-0.5 mr-2 flex-shrink-0"
+                  className="w-4 h-4 sm:w-5 sm:h-5 text-[#DC2626] mt-0.5 mr-2 flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -190,13 +141,13 @@ const Footer = () => {
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                   ></path>
                 </svg>
-                <span className="text-[#9CA3AF] text-sm sm:text-base">
+                <span className="text-[#9CA3AF] text-xs sm:text-sm">
                   +1 (555) 123-4567
                 </span>
               </li>
               <li className="flex items-start">
                 <svg
-                  className="w-5 h-5 text-[#DC2626] mt-0.5 mr-2 flex-shrink-0"
+                  className="w-4 h-4 sm:w-5 sm:h-5 text-[#DC2626] mt-0.5 mr-2 flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -209,7 +160,7 @@ const Footer = () => {
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   ></path>
                 </svg>
-                <span className="text-[#9CA3AF] text-sm sm:text-base">
+                <span className="text-[#9CA3AF] text-xs sm:text-sm">
                   info@irongym.com
                 </span>
               </li>
@@ -217,32 +168,32 @@ const Footer = () => {
           </div>
 
           {/* Hours */}
-          <div className="mt-4 sm:mt-0">
-            <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-white">
-              Hours
+          <div className="mt-2 sm:mt-0">
+            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-white font-['Oswald']">
+              HOURS
             </h3>
-            <ul className="space-y-2 sm:space-y-3">
-              <li className="flex justify-between">
-                <span className="text-[#9CA3AF] text-sm sm:text-base">
+            <ul className="space-y-3">
+              <li className="flex justify-between items-center bg-[#111827]/30 p-2 rounded">
+                <span className="text-[#9CA3AF] text-xs sm:text-sm">
                   Monday - Friday:
                 </span>
-                <span className="text-white text-sm sm:text-base">
+                <span className="text-white text-xs sm:text-sm font-medium">
                   5:00 AM - 10:00 PM
                 </span>
               </li>
-              <li className="flex justify-between">
-                <span className="text-[#9CA3AF] text-sm sm:text-base">
+              <li className="flex justify-between items-center bg-[#111827]/30 p-2 rounded">
+                <span className="text-[#9CA3AF] text-xs sm:text-sm">
                   Saturday:
                 </span>
-                <span className="text-white text-sm sm:text-base">
+                <span className="text-white text-xs sm:text-sm font-medium">
                   7:00 AM - 8:00 PM
                 </span>
               </li>
-              <li className="flex justify-between">
-                <span className="text-[#9CA3AF] text-sm sm:text-base">
+              <li className="flex justify-between items-center bg-[#111827]/30 p-2 rounded">
+                <span className="text-[#9CA3AF] text-xs sm:text-sm">
                   Sunday:
                 </span>
-                <span className="text-white text-sm sm:text-base">
+                <span className="text-white text-xs sm:text-sm font-medium">
                   8:00 AM - 6:00 PM
                 </span>
               </li>
@@ -251,11 +202,11 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-[#1F2937] mt-12 pt-6 text-center">
-          <p className="text-[#9CA3AF] text-xs sm:text-sm">
+        <div className="border-t border-[#1F2937] mt-8 sm:mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center">
+          <p className="text-[#9CA3AF] text-xs sm:text-sm mb-4 sm:mb-0 text-center sm:text-left">
             © {new Date().getFullYear()} IRONGYM. All rights reserved.
           </p>
-          <div className="flex justify-center space-x-4 mt-4">
+          <div className="flex justify-center space-x-4">
             <a
               href="#"
               className="text-xs sm:text-sm text-[#9CA3AF] hover:text-[#DC2626] transition-colors duration-300"

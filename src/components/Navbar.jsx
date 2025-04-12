@@ -42,7 +42,7 @@ const Navbar = () => {
             <Link to="/" className="flex items-center group">
               {/* Logo image */}
               <img
-                src="/logo.jpg"
+                src="/android-chrome-192x192.png"
                 alt="IRONGYM"
                 className="h-8 sm:h-10 w-auto mr-2"
               />
@@ -60,8 +60,7 @@ const Navbar = () => {
             <div className="ml-4 lg:ml-10 flex items-baseline space-x-1">
               {[
                 { name: "Home", path: "/" },
-                { name: "Classes", path: "/classes" },
-                { name: "Membership", path: "/membership" },
+                { name: "Products", path: "/products" },
                 { name: "Calculators", path: "/calculator" },
                 { name: "Contact", path: "/contact" },
               ].map((item) => (
@@ -86,7 +85,7 @@ const Navbar = () => {
           {/* Join button (desktop) */}
           <div className="hidden md:block">
             <Link
-              to="/membership"
+              to=""
               className="bg-[#DC2626] text-white px-4 lg:px-5 py-2 rounded-md font-['Cairo'] text-sm lg:text-base font-bold hover:bg-[#B91C1C] transition-all duration-300 transform hover:scale-105 shadow-md"
             >
               Join Now
@@ -134,8 +133,7 @@ const Navbar = () => {
         <div className="px-2 pt-2 pb-4 space-y-1 bg-[#111827] shadow-lg rounded-b-lg">
           {[
             { name: "Home", path: "/" },
-            { name: "Classes", path: "/classes" },
-            { name: "Membership", path: "/membership" },
+            { name: "Products", path: "/products" },
             { name: "Calculators", path: "/calculator" },
             { name: "Contact", path: "/contact" },
           ].map((item) => (
@@ -153,7 +151,7 @@ const Navbar = () => {
           ))}
           <div className="pt-2 pb-1">
             <Link
-              to="/membership"
+              to=""
               className="block w-full bg-[#DC2626] text-white text-center py-2 sm:py-3 rounded-md font-['Cairo'] text-sm sm:text-base font-bold hover:bg-[#B91C1C] transition-colors duration-300"
             >
               Join Now
