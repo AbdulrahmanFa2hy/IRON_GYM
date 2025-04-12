@@ -27,7 +27,7 @@ const Contact = () => {
     <div className="bg-[#111827] min-h-screen pt-20 pb-12 px-4 sm:px-6 md:px-8 lg:pt-24">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10 md:mb-14">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-4 font-['Oswald']">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-4 ">
             CONTACT <span className="text-[#DC2626]">US</span>
           </h1>
           <div className="w-16 sm:w-24 h-1 bg-[#DC2626] mx-auto mb-4 md:mb-6"></div>
@@ -40,7 +40,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
           {/* Contact Information */}
           <div className="bg-[#1F2937] p-6 sm:p-8 rounded-lg shadow-xl transform transition-all duration-300 hover:shadow-2xl">
-            <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 font-['Oswald']">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 ">
               GET IN TOUCH
             </h2>
             <div className="space-y-6 md:space-y-8">
@@ -67,7 +67,7 @@ const Contact = () => {
                   </svg>
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-lg sm:text-xl font-medium text-white font-['Oswald']">
+                  <h3 className="text-lg sm:text-xl font-medium text-white ">
                     LOCATION
                   </h3>
                   <p className="mt-1 text-[#9CA3AF] text-sm sm:text-base">
@@ -95,7 +95,7 @@ const Contact = () => {
                   </svg>
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-lg sm:text-xl font-medium text-white font-['Oswald']">
+                  <h3 className="text-lg sm:text-xl font-medium text-white ">
                     EMAIL
                   </h3>
                   <p className="mt-1 text-[#9CA3AF] text-sm sm:text-base">
@@ -121,7 +121,7 @@ const Contact = () => {
                   </svg>
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-lg sm:text-xl font-medium text-white font-['Oswald']">
+                  <h3 className="text-lg sm:text-xl font-medium text-white ">
                     PHONE
                   </h3>
                   <p className="mt-1 text-[#9CA3AF] text-sm sm:text-base">
@@ -131,7 +131,7 @@ const Contact = () => {
               </div>
 
               <div className="mt-8 pt-8 border-t border-[#374151]">
-                <h3 className="text-lg sm:text-xl font-medium text-white mb-4 font-['Oswald']">
+                <h3 className="text-lg sm:text-xl font-medium text-white mb-4 ">
                   FOLLOW US
                 </h3>
                 <div className="flex space-x-4">
@@ -190,7 +190,7 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="bg-[#1F2937] p-6 sm:p-8 rounded-lg shadow-xl transform transition-all duration-300 hover:shadow-2xl">
-            <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 font-['Oswald']">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 ">
               SEND US A MESSAGE
             </h2>
             <form className="space-y-5" onSubmit={handleSubmit}>
@@ -274,7 +274,7 @@ const Contact = () => {
         {/* Hours of Operation Section */}
         <div className="mt-12 sm:mt-16">
           <div className="bg-[#1F2937] p-6 sm:p-8 rounded-lg shadow-xl transform transition-all duration-300 hover:shadow-2xl">
-            <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 font-['Oswald']">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 ">
               HOURS OF OPERATION
             </h2>
             <div className="flex justify-center">
@@ -291,7 +291,7 @@ const Contact = () => {
                         <div class="w-36 h-36 rounded-full bg-[#DC2626] border-4 border-white flex items-center justify-center">
                           <div class="text-center">
                             <div class="text-white text-lg font-bold">OPEN</div>
-                            <div class="text-white text-4xl font-black font-['Oswald']">24</div>
+                            <div class="text-white text-4xl font-black ">24</div>
                             <div class="text-white text-xs">HOURS</div>
                           </div>
                         </div>

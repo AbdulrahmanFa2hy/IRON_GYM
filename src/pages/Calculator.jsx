@@ -97,7 +97,7 @@ const Calculator = () => {
     <div className="min-h-screen bg-[#111827] pt-20 pb-12 px-4 sm:px-6 md:px-8 lg:pt-24">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10 md:mb-16">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-4 font-['Oswald']">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-4">
             Fitness <span className="text-[#DC2626]">Calculators</span>
           </h1>
           <div className="w-16 sm:w-24 h-1 bg-[#DC2626] mx-auto mb-4 md:mb-6"></div>
@@ -355,7 +355,7 @@ const Calculator = () => {
 
         {/* Explanation Section */}
         <div className="mt-10 sm:mt-12 lg:mt-16 bg-[#1F2937] rounded-lg p-4 sm:p-6 md:p-8 shadow-xl">
-          <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 md:mb-6 font-['Oswald']">
+          <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 md:mb-6">
             Understanding the Calculators
           </h2>
 

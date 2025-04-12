@@ -201,11 +201,11 @@ const Products = () => {
               : "opacity-0 -translate-y-10"
           }`}
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-4 font-['Oswald']">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-4 ">
             OUR <span className="text-[#DC2626]">PRODUCTS</span>
           </h1>
           <div className="w-16 sm:w-24 h-1 bg-[#DC2626] mx-auto mb-4 md:mb-6"></div>
-          <p className="text-[#9CA3AF] text-sm sm:text-base md:text-lg max-w-3xl mx-auto font-['Cairo']">
+          <p className="text-[#9CA3AF] text-sm sm:text-base md:text-lg max-w-3xl mx-auto">
             Browse our premium selection of fitness equipment, supplements, and
             accessories to help you reach your goals faster.
           </p>
@@ -436,7 +436,7 @@ const Products = () => {
 
               <div className="p-4 sm:p-6">
                 <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-white group-hover:text-[#DC2626] transition-colors duration-300 font-['Oswald']">
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-white group-hover:text-[#DC2626] transition-colors duration-300 ">
                     {product.name}
                   </h3>
                   <span className="text-base sm:text-lg font-bold text-[#DC2626]">
@@ -471,7 +471,7 @@ const Products = () => {
                     </span>
                   </div>
                 </div>
-                <p className="text-xs sm:text-sm text-[#9CA3AF] mb-4 sm:mb-5 line-clamp-2 sm:line-clamp-3 font-['Cairo']">
+                <p className="text-xs sm:text-sm text-[#9CA3AF] mb-4 sm:mb-5 line-clamp-2 sm:line-clamp-3">
                   {product.description}
                 </p>
                 <div className="flex justify-between items-center">
