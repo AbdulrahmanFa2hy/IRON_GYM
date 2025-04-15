@@ -26,7 +26,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-[#111827] min-h-screen pt-20 pb-12 px-4 sm:px-6 md:px-8 lg:pt-24">
+    <div className="bg-[#111827] min-h-screen pt-20 pb-8 sm:pb-12 px-4 sm:px-6 md:px-8 lg:pt-24">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10 md:mb-14">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-4">
@@ -38,13 +38,43 @@ const Contact = () => {
             {t("contact.description")}
           </p>
         </div>
+        {/* Hours of Operation Section */}
+        <div className="mt-12 mb-6 sm:mb-8">
+          <div className="bg-[#1F2937] p-4 sm:p-8 rounded-lg shadow-xl transform transition-all duration-300 hover:shadow-2xl">
+            <div className="flex justify-center">
+              <div className="flex flex-col items-center">
+                <div className="w-60 h-30 flex items-center justify-center">
+                  <img
+                    src={hoursImage}
+                    alt="Open 24 Hours"
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      // If image fails to load, show fallback content
+                      e.target.style.display = "none";
+                      e.target.parentNode.innerHTML = `
+                        <div class="w-36 h-36 rounded-full bg-[#DC2626] border-4 border-white flex items-center justify-center">
+                          <div class="text-center">
+                            <div class="text-white text-lg font-bold">OPEN</div>
+                            <div class="text-white text-4xl font-black ">24</div>
+                            <div class="text-white text-xs">HOURS</div>
+                          </div>
+                        </div>
+                      `;
+                    }}
+                  />
+                </div>
+
+                <p className="text-[#9CA3AF] text-center mt-6 text-sm sm:text-base max-w-md">
+                  {t("contact.hours.description")}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
           {/* Contact Information */}
-          <div className="bg-[#1F2937] p-6 sm:p-8 rounded-lg shadow-xl transform transition-all duration-300 hover:shadow-2xl">
-            <h2 className="text-xl sm:text-2xl font-bold text-white mb-6">
-              {t("contact.getInTouch.title")}
-            </h2>
+          <div className="bg-[#1F2937] p-4 sm:p-8 rounded-lg shadow-xl transform transition-all duration-300 hover:shadow-2xl">
             <div className="space-y-6 md:space-y-8">
               <div className="flex items-start gap-2 sm:gap-4 ">
                 <div className="flex-shrink-0 bg-[#111827] p-3 rounded-full">
@@ -191,7 +221,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-[#1F2937] p-6 sm:p-8 rounded-lg shadow-xl transform transition-all duration-300 hover:shadow-2xl">
+          <div className="bg-[#1F2937] p-4 sm:p-8 rounded-lg shadow-xl transform transition-all duration-300 hover:shadow-2xl">
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-6">
               {t("contact.form.title")}
             </h2>
@@ -208,7 +238,7 @@ const Contact = () => {
                 />
                 <label
                   htmlFor="name"
-                  className="absolute left-2 -top-2.5 px-1 text-sm text-[#9CA3AF] transition-all duration-300 peer-placeholder-shown:text-base peer-placeholder-shown:text-[#9CA3AF] peer-placeholder-shown:top-3.5 peer-placeholder-shown:left-4 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-sm peer-focus:text-[#DC2626] peer-focus:bg-[#1F2937] rounded-sm"
+                  className="absolute start-2 -top-2.5 px-1 text-sm text-[#9CA3AF] transition-all duration-300 peer-placeholder-shown:text-base peer-placeholder-shown:text-[#9CA3AF] peer-placeholder-shown:top-3.5 peer-placeholder-shown:start-4 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:start-2 peer-focus:text-sm peer-focus:text-[#DC2626] peer-focus:bg-[#1F2937] rounded-sm"
                 >
                   {t("contact.form.name")}
                 </label>
@@ -226,7 +256,7 @@ const Contact = () => {
                 />
                 <label
                   htmlFor="email"
-                  className="absolute left-2 -top-2.5 px-1 text-sm text-[#9CA3AF] transition-all duration-300 peer-placeholder-shown:text-base peer-placeholder-shown:text-[#9CA3AF] peer-placeholder-shown:top-3.5 peer-placeholder-shown:left-4 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-sm peer-focus:text-[#DC2626] peer-focus:bg-[#1F2937] rounded-sm"
+                  className="absolute start-2 -top-2.5 px-1 text-sm text-[#9CA3AF] transition-all duration-300 peer-placeholder-shown:text-base peer-placeholder-shown:text-[#9CA3AF] peer-placeholder-shown:top-3.5 peer-placeholder-shown:start-4 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:start-2 peer-focus:text-sm peer-focus:text-[#DC2626] peer-focus:bg-[#1F2937] rounded-sm"
                 >
                   {t("contact.form.email")}
                 </label>
@@ -244,7 +274,7 @@ const Contact = () => {
                 ></textarea>
                 <label
                   htmlFor="message"
-                  className="absolute left-2 -top-2.5 px-1 text-sm text-[#9CA3AF] transition-all duration-300 peer-placeholder-shown:text-base peer-placeholder-shown:text-[#9CA3AF] peer-placeholder-shown:top-3.5 peer-placeholder-shown:left-4 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-sm peer-focus:text-[#DC2626] peer-focus:bg-[#1F2937] rounded-sm"
+                  className="absolute start-2 -top-2.5 px-1 text-sm text-[#9CA3AF] transition-all duration-300 peer-placeholder-shown:text-base peer-placeholder-shown:text-[#9CA3AF] peer-placeholder-shown:top-3.5 peer-placeholder-shown:start-4 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:start-2 peer-focus:text-sm peer-focus:text-[#DC2626] peer-focus:bg-[#1F2937] rounded-sm"
                 >
                   {t("contact.form.message")}
                 </label>
@@ -252,68 +282,18 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full bg-[#DC2626] text-white py-3 px-4 rounded-md hover:bg-[#B91C1C] transition duration-300 font-bold flex items-center justify-center group"
+                className="w-full bg-[#DC2626] text-white py-3 px-4 rounded-md hover:bg-[#B91C1C] transition duration-300 font-bold flex items-center justify-center group cursor-pointer"
               >
                 <span>{t("contact.form.send")}</span>
-                <svg
-                  className="ml-2 w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  ></path>
-                </svg>
               </button>
             </form>
           </div>
         </div>
 
-        {/* Hours of Operation Section */}
-        <div className="mt-12 sm:mt-16">
-          <div className="bg-[#1F2937] p-6 sm:p-8 rounded-lg shadow-xl transform transition-all duration-300 hover:shadow-2xl">
-            <h2 className="text-xl sm:text-2xl font-bold text-white mb-6">
-              {t("contact.hours.title")}
-            </h2>
-            <div className="flex justify-center">
-              <div className="flex flex-col items-center">
-                <div className="w-60 h-60 flex items-center justify-center">
-                  <img
-                    src={hoursImage}
-                    alt="Open 24 Hours"
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      // If image fails to load, show fallback content
-                      e.target.style.display = "none";
-                      e.target.parentNode.innerHTML = `
-                        <div class="w-36 h-36 rounded-full bg-[#DC2626] border-4 border-white flex items-center justify-center">
-                          <div class="text-center">
-                            <div class="text-white text-lg font-bold">OPEN</div>
-                            <div class="text-white text-4xl font-black ">24</div>
-                            <div class="text-white text-xs">HOURS</div>
-                          </div>
-                        </div>
-                      `;
-                    }}
-                  />
-                </div>
-
-                <p className="text-[#9CA3AF] text-center mt-6 text-sm sm:text-base max-w-md">
-                  {t("contact.hours.description")}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Map Section */}
-        <div className="mt-12 sm:mt-16">
-          <div className="bg-[#1F2937] p-2 sm:p-4 rounded-md shadow-xl mb-6">
-            <div className="relative w-full h-[50vh] md:h-[75vh] rounded-md overflow-hidden">
+        <div className="mt-8 sm:mt-16">
+          <div className="bg-[#1F2937] p-2 sm:p-4 rounded-lg shadow-xl transform transition-all duration-300 hover:shadow-2xl">
+            <div className="relative w-full h-[50vh] md:h-[75vh] rounded-lg overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3419.025443360017!2d33.80466727622767!3d31.122783974389587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14fdd334a26db7bb%3A0xd4d5ef01f79e4d17!2sIron%20gym!5e0!3m2!1sen!2sus!4v1718306153999!5m2!1sen!2sus&mode=dark"
                 width="100%"

@@ -171,11 +171,10 @@
     "us": "US",
     "description": "Get in touch with us for any questions about our services, membership options, or schedule",
     "getInTouch": {
-      "title": "GET IN TOUCH",
       "location": {
         "title": "LOCATION",
-        "line1": "4RF4+5RQ, Qesm Thaleth Al Arish",
-        "line2": "North Sinai Governorate 8954625"
+        "line1": "El-Arish, behind Al-Refaay Mousqe",
+        "line2": "North Of Sinai"
       },
       "email": {
         "title": "EMAIL",
