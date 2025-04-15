@@ -165,5 +165,38 @@
       "description": "7 days a week, including holidays"
     },
     "copyright": "© {{year}} IRONGYM. All rights reserved."
+  },
+  "contact": {
+    "title": "CONTACT",
+    "us": "US",
+    "description": "Get in touch with us for any questions about our services, membership options, or schedule",
+    "getInTouch": {
+      "title": "GET IN TOUCH",
+      "location": {
+        "title": "LOCATION",
+        "line1": "4RF4+5RQ, Qesm Thaleth Al Arish",
+        "line2": "North Sinai Governorate 8954625"
+      },
+      "email": {
+        "title": "EMAIL",
+        "value": "contact@irongym.com"
+      },
+      "phone": {
+        "title": "PHONE",
+        "value": "01210855655"
+      },
+      "followUs": "FOLLOW US"
+    },
+    "form": {
+      "title": "SEND US A MESSAGE",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send"
+    },
+    "hours": {
+      "title": "HOURS OF OPERATION",
+      "description": "Our fitness facility is available to members 24/7, all days of the week including weekends and holidays."
+    }
   }
 }

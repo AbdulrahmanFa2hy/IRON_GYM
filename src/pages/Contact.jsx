@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import hoursImage from "../assets/24h.png";
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,24 +29,24 @@ const Contact = () => {
     <div className="bg-[#111827] min-h-screen pt-20 pb-12 px-4 sm:px-6 md:px-8 lg:pt-24">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10 md:mb-14">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-4 ">
-            CONTACT <span className="text-[#DC2626]">US</span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-4">
+            {t("contact.title")}{" "}
+            <span className="text-[#DC2626]">{t("contact.us")}</span>
           </h1>
           <div className="w-16 sm:w-24 h-1 bg-[#DC2626] mx-auto mb-4 md:mb-6"></div>
           <p className="text-[#9CA3AF] text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
-            Get in touch with us for any questions about our services,
-            membership options, or schedule
+            {t("contact.description")}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
           {/* Contact Information */}
           <div className="bg-[#1F2937] p-6 sm:p-8 rounded-lg shadow-xl transform transition-all duration-300 hover:shadow-2xl">
-            <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 ">
-              GET IN TOUCH
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-6">
+              {t("contact.getInTouch.title")}
             </h2>
             <div className="space-y-6 md:space-y-8">
-              <div className="flex items-start">
+              <div className="flex items-start gap-2 sm:gap-4 ">
                 <div className="flex-shrink-0 bg-[#111827] p-3 rounded-full">
                   <svg
                     className="h-5 w-5 sm:h-6 sm:w-6 text-[#DC2626]"
@@ -66,19 +68,19 @@ const Contact = () => {
                     />
                   </svg>
                 </div>
-                <div className="ml-4">
-                  <h3 className="text-lg sm:text-xl font-medium text-white ">
-                    LOCATION
+                <div className="">
+                  <h3 className="text-lg sm:text-xl font-medium text-white">
+                    {t("contact.getInTouch.location.title")}
                   </h3>
                   <p className="mt-1 text-[#9CA3AF] text-sm sm:text-base">
-                    4RF4+5RQ, Qesm Thaleth Al Arish
+                    {t("contact.getInTouch.location.line1")}
                     <br />
-                    North Sinai Governorate 8954625
+                    {t("contact.getInTouch.location.line2")}
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start">
+              <div className="flex items-start gap-2 sm:gap-4 ">
                 <div className="flex-shrink-0 bg-[#111827] p-3 rounded-full">
                   <svg
                     className="h-5 w-5 sm:h-6 sm:w-6 text-[#DC2626]"
@@ -94,17 +96,17 @@ const Contact = () => {
                     />
                   </svg>
                 </div>
-                <div className="ml-4">
-                  <h3 className="text-lg sm:text-xl font-medium text-white ">
-                    EMAIL
+                <div className="">
+                  <h3 className="text-lg sm:text-xl font-medium text-white">
+                    {t("contact.getInTouch.email.title")}
                   </h3>
                   <p className="mt-1 text-[#9CA3AF] text-sm sm:text-base">
-                    contact@irongym.com
+                    {t("contact.getInTouch.email.value")}
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start">
+              <div className="flex items-start gap-2 sm:gap-4 ">
                 <div className="flex-shrink-0 bg-[#111827] p-3 rounded-full">
                   <svg
                     className="h-5 w-5 sm:h-6 sm:w-6 text-[#DC2626]"
@@ -120,21 +122,21 @@ const Contact = () => {
                     />
                   </svg>
                 </div>
-                <div className="ml-4">
-                  <h3 className="text-lg sm:text-xl font-medium text-white ">
-                    PHONE
+                <div className="">
+                  <h3 className="text-lg sm:text-xl font-medium text-white">
+                    {t("contact.getInTouch.phone.title")}
                   </h3>
                   <p className="mt-1 text-[#9CA3AF] text-sm sm:text-base">
-                    01210855655
+                    {t("contact.getInTouch.phone.value")}
                   </p>
                 </div>
               </div>
 
               <div className="mt-8 pt-8 border-t border-[#374151]">
-                <h3 className="text-lg sm:text-xl font-medium text-white mb-4 ">
-                  FOLLOW US
+                <h3 className="text-lg sm:text-xl font-medium text-white mb-4">
+                  {t("contact.getInTouch.followUs")}
                 </h3>
-                <div className="flex space-x-4">
+                <div className="flex gap-2 sm:gap-4">
                   <a
                     href="#"
                     className="bg-[#111827] text-[#9CA3AF] hover:text-[#DC2626] hover:bg-[#111827]/70 p-3 rounded-full transition-all duration-300"
@@ -190,8 +192,8 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="bg-[#1F2937] p-6 sm:p-8 rounded-lg shadow-xl transform transition-all duration-300 hover:shadow-2xl">
-            <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 ">
-              SEND US A MESSAGE
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-6">
+              {t("contact.form.title")}
             </h2>
             <form className="space-y-5" onSubmit={handleSubmit}>
               <div className="relative">
@@ -201,14 +203,14 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   className="peer block w-full bg-[#111827] border border-[#374151] rounded-md shadow-sm py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-[#DC2626] focus:border-transparent transition-all duration-300 placeholder-transparent"
-                  placeholder="Name"
+                  placeholder={t("contact.form.name")}
                   required
                 />
                 <label
                   htmlFor="name"
                   className="absolute left-2 -top-2.5 px-1 text-sm text-[#9CA3AF] transition-all duration-300 peer-placeholder-shown:text-base peer-placeholder-shown:text-[#9CA3AF] peer-placeholder-shown:top-3.5 peer-placeholder-shown:left-4 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-sm peer-focus:text-[#DC2626] peer-focus:bg-[#1F2937] rounded-sm"
                 >
-                  Name
+                  {t("contact.form.name")}
                 </label>
               </div>
 
@@ -219,14 +221,14 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   className="peer block w-full bg-[#111827] border border-[#374151] rounded-md shadow-sm py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-[#DC2626] focus:border-transparent transition-all duration-300 placeholder-transparent"
-                  placeholder="Email"
+                  placeholder={t("contact.form.email")}
                   required
                 />
                 <label
                   htmlFor="email"
                   className="absolute left-2 -top-2.5 px-1 text-sm text-[#9CA3AF] transition-all duration-300 peer-placeholder-shown:text-base peer-placeholder-shown:text-[#9CA3AF] peer-placeholder-shown:top-3.5 peer-placeholder-shown:left-4 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-sm peer-focus:text-[#DC2626] peer-focus:bg-[#1F2937] rounded-sm"
                 >
-                  Email
+                  {t("contact.form.email")}
                 </label>
               </div>
 
@@ -237,14 +239,14 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   className="peer block w-full bg-[#111827] border border-[#374151] rounded-md shadow-sm py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-[#DC2626] focus:border-transparent transition-all duration-300 resize-none placeholder-transparent"
-                  placeholder="Message"
+                  placeholder={t("contact.form.message")}
                   required
                 ></textarea>
                 <label
                   htmlFor="message"
                   className="absolute left-2 -top-2.5 px-1 text-sm text-[#9CA3AF] transition-all duration-300 peer-placeholder-shown:text-base peer-placeholder-shown:text-[#9CA3AF] peer-placeholder-shown:top-3.5 peer-placeholder-shown:left-4 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-sm peer-focus:text-[#DC2626] peer-focus:bg-[#1F2937] rounded-sm"
                 >
-                  Message
+                  {t("contact.form.message")}
                 </label>
               </div>
 
@@ -252,7 +254,7 @@ const Contact = () => {
                 type="submit"
                 className="w-full bg-[#DC2626] text-white py-3 px-4 rounded-md hover:bg-[#B91C1C] transition duration-300 font-bold flex items-center justify-center group"
               >
-                <span>Send</span>
+                <span>{t("contact.form.send")}</span>
                 <svg
                   className="ml-2 w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-1"
                   fill="none"
@@ -274,8 +276,8 @@ const Contact = () => {
         {/* Hours of Operation Section */}
         <div className="mt-12 sm:mt-16">
           <div className="bg-[#1F2937] p-6 sm:p-8 rounded-lg shadow-xl transform transition-all duration-300 hover:shadow-2xl">
-            <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 ">
-              HOURS OF OPERATION
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-6">
+              {t("contact.hours.title")}
             </h2>
             <div className="flex justify-center">
               <div className="flex flex-col items-center">
@@ -301,8 +303,7 @@ const Contact = () => {
                 </div>
 
                 <p className="text-[#9CA3AF] text-center mt-6 text-sm sm:text-base max-w-md">
-                  Our fitness facility is available to members 24/7, all days of
-                  the week including weekends and holidays.
+                  {t("contact.hours.description")}
                 </p>
               </div>
             </div>

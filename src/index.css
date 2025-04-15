@@ -1,20 +1,21 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&display=swap");
 
-/* Cairo Font Family */
+/* Noto Sans Arabic Font Family */
 @font-face {
-  font-family: "Cairo";
-  src: url("/fonts/Cairo/Cairo-VariableFont_slnt\,wght.ttf") format("truetype");
-  font-weight: 100 900;
+  font-family: "Noto Sans Arabic";
+  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap");
+  font-weight: 400 700;
   font-style: normal;
   font-display: swap;
 }
 
-/* Oswald Font Family */
+/* Noto Serif Font Family */
 @font-face {
-  font-family: "Oswald";
-  src: url("/fonts/Oswald/Oswald-VariableFont_wght.ttf") format("truetype");
-  font-weight: 100 900;
+  font-family: "Noto Serif";
+  src: url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&display=swap");
+  font-weight: 400 700;
   font-style: normal;
   font-display: swap;
 }
@@ -25,7 +26,11 @@
   }
 
   html {
-    font-family: "Cairo", system-ui, sans-serif;
+    font-family: "Noto Sans Arabic", system-ui, sans-serif;
+  }
+
+  html[dir="ltr"] {
+    font-family: "Noto Serif", system-ui, serif;
   }
 
   h1,
@@ -34,7 +39,7 @@
   h4,
   h5,
   h6 {
-    font-family: "Oswald", system-ui, sans-serif;
+    font-family: "Noto Serif", system-ui, serif;
   }
 }
 
@@ -62,13 +67,13 @@ html {
 
 @layer components {
   .hero-heading {
-    font-family: "Oswald", system-ui, sans-serif;
+    font-family: "Noto Serif", system-ui, serif;
     font-weight: 700;
     letter-spacing: -0.025em;
   }
 
   .nav-link {
-    font-family: "Cairo", system-ui, sans-serif;
+    font-family: "Noto Sans Arabic", system-ui, sans-serif;
     font-weight: 600;
   }
 }
@@ -88,7 +93,7 @@ html {
 
 /* RTL Support for Arabic */
 html[dir="rtl"] {
-  font-family: "Cairo", sans-serif;
+  font-family: "Noto Sans Arabic", sans-serif;
 }
 
 html[dir="rtl"] .flex-row {
