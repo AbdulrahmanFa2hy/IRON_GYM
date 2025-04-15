@@ -63,7 +63,7 @@ const ProductsSection = ({ featuredProducts }) => {
                     Add to Cart
                   </button>
                   <Link
-                    to={`/products/${product.id}`}
+                    to={``}
                     className="text-[#DC2626] hover:text-white transition-colors duration-300 flex items-center"
                   >
                     <span className="mr-1 text-sm">Details</span>

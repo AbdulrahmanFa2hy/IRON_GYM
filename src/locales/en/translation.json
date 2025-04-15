@@ -78,5 +78,75 @@
     "quote": "IRONGYM has completely changed my life. The trainers are exceptional, providing personalized attention that helped me achieve results I never thought possible. In just six months, I've transformed both physically and mentally.",
     "clientName": "Abulrahman Fathy",
     "clientTitle": "Premium Member"
+  },
+  "calculator": {
+    "title": "Fitness",
+    "subtitle": "Calculators",
+    "description": "Use our fitness calculators to track your progress and optimize your training",
+    "bmi": {
+      "title": "BMI Calculator",
+      "height": "Height (cm)",
+      "weight": "Weight (kg)",
+      "calculateButton": "Calculate BMI",
+      "result": "Your BMI:",
+      "category": "Category:",
+      "categories": {
+        "underweight": "Underweight",
+        "normal": "Normal weight",
+        "overweight": "Overweight",
+        "obesity": "Obesity"
+      }
+    },
+    "tdee": {
+      "title": "TDEE Calculator",
+      "weight": "Weight (kg)",
+      "height": "Height (cm)",
+      "age": "Age",
+      "gender": "Gender",
+      "genders": {
+        "male": "Male",
+        "female": "Female"
+      },
+      "activity": "Activity Level",
+      "activities": {
+        "sedentary": "Sedentary (office job)",
+        "light": "Light Exercise (1-2 days/week)",
+        "moderate": "Moderate Exercise (3-5 days/week)",
+        "active": "Heavy Exercise (6-7 days/week)",
+        "very": "Athlete (2x per day)"
+      },
+      "calculateButton": "Calculate TDEE",
+      "result": "Your TDEE:",
+      "calories": "calories/day",
+      "maintenance": "This is your maintenance calorie intake"
+    },
+    "orm": {
+      "title": "1RM Calculator",
+      "weight": "Weight Lifted (kg)",
+      "reps": "Reps Performed",
+      "calculateButton": "Calculate 1RM",
+      "result": "Your estimated 1RM:",
+      "maxWeight": "Maximum weight you can lift for one rep"
+    },
+    "explanation": {
+      "title": "Understanding the Calculators",
+      "bmi": {
+        "title": "BMI Calculator",
+        "description": "Body Mass Index (BMI) is a measure of body fat based on height and weight. It's a screening tool that can indicate whether you are underweight, normal weight, overweight, or obese."
+      },
+      "tdee": {
+        "title": "TDEE Calculator",
+        "description": "Total Daily Energy Expenditure (TDEE) estimates how many calories you burn per day. It accounts for your basal metabolic rate and physical activity level to determine your maintenance calories."
+      },
+      "orm": {
+        "title": "1RM Calculator",
+        "description": "One Repetition Maximum (1RM) estimates the maximum weight you can lift for a single repetition of an exercise. This helps track strength progress and determine appropriate training weights."
+      }
+    },
+    "tooltips": {
+      "bmi": "Body Mass Index - A measure of body fat based on height and weight",
+      "tdee": "Total Daily Energy Expenditure - The number of calories you burn in a day",
+      "orm": "One Repetition Maximum - The maximum weight you can lift for one repetition"
+    }
   }
 }

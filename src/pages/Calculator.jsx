@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import InputField from "../components/common/InputField";
 
 const Calculator = () => {
+  const { t } = useTranslation();
   // BMI Calculator State
   const [bmiHeight, setBmiHeight] = useState("");
   const [bmiWeight, setBmiWeight] = useState("");
@@ -32,13 +35,13 @@ const Calculator = () => {
 
     // BMI Categories
     if (bmi < 18.5) {
-      setBmiCategory("Underweight");
+      setBmiCategory("underweight");
     } else if (bmi >= 18.5 && bmi < 24.9) {
-      setBmiCategory("Normal weight");
+      setBmiCategory("normal");
     } else if (bmi >= 25 && bmi < 29.9) {
-      setBmiCategory("Overweight");
+      setBmiCategory("overweight");
     } else {
-      setBmiCategory("Obesity");
+      setBmiCategory("obesity");
     }
   };
 
@@ -98,19 +101,22 @@ const Calculator = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10 md:mb-16">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-4">
-            Fitness <span className="text-[#DC2626]">Calculators</span>
+            {t("calculator.title")}{" "}
+            <span className="text-[#DC2626]">{t("calculator.subtitle")}</span>
           </h1>
           <div className="w-16 sm:w-24 h-1 bg-[#DC2626] mx-auto mb-4 md:mb-6"></div>
           <p className="text-[#9CA3AF] text-sm sm:text-base md:text-lg max-w-3xl mx-auto">
-            Use our fitness calculators to track your progress and optimize your
-            training
+            {t("calculator.description")}
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {/* BMI Calculator */}
           <div className="bg-[#1F2937] rounded-lg p-4 sm:p-6 shadow-xl transition-transform hover:shadow-2xl hover:-translate-y-1 duration-300">
-            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center">
+            <h2
+              className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center group relative"
+              title={t("calculator.tooltips.bmi")}
+            >
               <svg
                 className="w-5 h-5 sm:w-6 sm:h-6 mr-2 text-[#DC2626]"
                 fill="none"
@@ -124,51 +130,39 @@ const Calculator = () => {
                   d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
                 />
               </svg>
-              BMI Calculator
+              {t("calculator.bmi.title")}
             </h2>
             <form onSubmit={calculateBMI}>
-              <div className="mb-4">
-                <label className="block text-white text-sm font-medium mb-2">
-                  Height (cm)
-                </label>
-                <input
-                  type="number"
-                  value={bmiHeight}
-                  onChange={(e) => setBmiHeight(e.target.value)}
-                  className="w-full p-2 rounded-md bg-[#374151] text-white border border-[#4B5563] focus:outline-none focus:ring-2 focus:ring-[#DC2626]"
-                  placeholder="e.g. 175"
-                  required
-                />
-              </div>
-              <div className="mb-6">
-                <label className="block text-white text-sm font-medium mb-2">
-                  Weight (kg)
-                </label>
-                <input
-                  type="number"
-                  value={bmiWeight}
-                  onChange={(e) => setBmiWeight(e.target.value)}
-                  className="w-full p-2 rounded-md bg-[#374151] text-white border border-[#4B5563] focus:outline-none focus:ring-2 focus:ring-[#DC2626]"
-                  placeholder="e.g. 70"
-                  required
-                />
-              </div>
+              <InputField
+                label={t("calculator.bmi.height")}
+                placeholder="e.g. 175"
+                value={bmiHeight}
+                onChange={(e) => setBmiHeight(e.target.value)}
+              />
+              <InputField
+                label={t("calculator.bmi.weight")}
+                placeholder="e.g. 70"
+                value={bmiWeight}
+                onChange={(e) => setBmiWeight(e.target.value)}
+                className="mb-6"
+              />
               <button
                 type="submit"
                 className="w-full bg-[#DC2626] text-white py-2 px-4 rounded-md hover:bg-[#B91C1C] transition duration-300 font-bold"
               >
-                Calculate BMI
+                {t("calculator.bmi.calculateButton")}
               </button>
             </form>
 
             {bmiResult && (
               <div className="mt-6 p-4 bg-[#111827] rounded-md">
                 <p className="text-white text-center">
-                  Your BMI:{" "}
+                  {t("calculator.bmi.result")}{" "}
                   <span className="font-bold text-xl">{bmiResult}</span>
                 </p>
                 <p className="text-[#9CA3AF] text-center mt-1">
-                  Category: {bmiCategory}
+                  {t("calculator.bmi.category")}{" "}
+                  {t(`calculator.bmi.categories.${bmiCategory}`)}
                 </p>
               </div>
             )}
@@ -176,7 +170,10 @@ const Calculator = () => {
 
           {/* TDEE Calculator */}
           <div className="bg-[#1F2937] rounded-lg p-4 sm:p-6 shadow-xl transition-transform hover:shadow-2xl hover:-translate-y-1 duration-300">
-            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center">
+            <h2
+              className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center group relative"
+              title={t("calculator.tooltips.tdee")}
+            >
               <svg
                 className="w-5 h-5 sm:w-6 sm:h-6 mr-2 text-[#DC2626]"
                 fill="none"
@@ -190,96 +187,87 @@ const Calculator = () => {
                   d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
                 />
               </svg>
-              TDEE Calculator
+              {t("calculator.tdee.title")}
             </h2>
             <form onSubmit={calculateTDEE} className="space-y-3 sm:space-y-4">
+              <InputField
+                label={t("calculator.tdee.weight")}
+                placeholder="e.g. 70"
+                value={tdeeWeight}
+                onChange={(e) => setTdeeWeight(e.target.value)}
+              />
+              <InputField
+                label={t("calculator.tdee.height")}
+                placeholder="e.g. 175"
+                value={tdeeHeight}
+                onChange={(e) => setTdeeHeight(e.target.value)}
+              />
+              <InputField
+                label={t("calculator.tdee.age")}
+                placeholder="e.g. 30"
+                value={tdeeAge}
+                onChange={(e) => setTdeeAge(e.target.value)}
+              />
               <div>
                 <label className="block text-white text-sm font-medium mb-2">
-                  Weight (kg)
-                </label>
-                <input
-                  type="number"
-                  value={tdeeWeight}
-                  onChange={(e) => setTdeeWeight(e.target.value)}
-                  className="w-full p-2 rounded-md bg-[#374151] text-white border border-[#4B5563] focus:outline-none focus:ring-2 focus:ring-[#DC2626]"
-                  placeholder="e.g. 70"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-white text-sm font-medium mb-2">
-                  Height (cm)
-                </label>
-                <input
-                  type="number"
-                  value={tdeeHeight}
-                  onChange={(e) => setTdeeHeight(e.target.value)}
-                  className="w-full p-2 rounded-md bg-[#374151] text-white border border-[#4B5563] focus:outline-none focus:ring-2 focus:ring-[#DC2626]"
-                  placeholder="e.g. 175"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-white text-sm font-medium mb-2">
-                  Age
-                </label>
-                <input
-                  type="number"
-                  value={tdeeAge}
-                  onChange={(e) => setTdeeAge(e.target.value)}
-                  className="w-full p-2 rounded-md bg-[#374151] text-white border border-[#4B5563] focus:outline-none focus:ring-2 focus:ring-[#DC2626]"
-                  placeholder="e.g. 30"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-white text-sm font-medium mb-2">
-                  Gender
+                  {t("calculator.tdee.gender")}
                 </label>
                 <select
                   value={tdeeGender}
                   onChange={(e) => setTdeeGender(e.target.value)}
                   className="w-full p-2 rounded-md bg-[#374151] text-white border border-[#4B5563] focus:outline-none focus:ring-2 focus:ring-[#DC2626]"
                 >
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
+                  <option value="male">
+                    {t("calculator.tdee.genders.male")}
+                  </option>
+                  <option value="female">
+                    {t("calculator.tdee.genders.female")}
+                  </option>
                 </select>
               </div>
               <div>
                 <label className="block text-white text-sm font-medium mb-2">
-                  Activity Level
+                  {t("calculator.tdee.activity")}
                 </label>
                 <select
                   value={tdeeActivity}
                   onChange={(e) => setTdeeActivity(e.target.value)}
                   className="w-full p-2 rounded-md bg-[#374151] text-white border border-[#4B5563] focus:outline-none focus:ring-2 focus:ring-[#DC2626]"
                 >
-                  <option value="sedentary">Sedentary (office job)</option>
-                  <option value="light">Light Exercise (1-2 days/week)</option>
-                  <option value="moderate">
-                    Moderate Exercise (3-5 days/week)
+                  <option value="sedentary">
+                    {t("calculator.tdee.activities.sedentary")}
                   </option>
-                  <option value="active">Heavy Exercise (6-7 days/week)</option>
-                  <option value="very">Athlete (2x per day)</option>
+                  <option value="light">
+                    {t("calculator.tdee.activities.light")}
+                  </option>
+                  <option value="moderate">
+                    {t("calculator.tdee.activities.moderate")}
+                  </option>
+                  <option value="active">
+                    {t("calculator.tdee.activities.active")}
+                  </option>
+                  <option value="very">
+                    {t("calculator.tdee.activities.very")}
+                  </option>
                 </select>
               </div>
               <button
                 type="submit"
                 className="w-full bg-[#DC2626] text-white py-2 px-4 rounded-md hover:bg-[#B91C1C] transition duration-300 mt-4 sm:mt-6 font-bold"
               >
-                Calculate TDEE
+                {t("calculator.tdee.calculateButton")}
               </button>
             </form>
 
             {tdeeResult && (
               <div className="mt-6 p-4 bg-[#111827] rounded-md">
                 <p className="text-white text-center">
-                  Your TDEE:{" "}
+                  {t("calculator.tdee.result")}{" "}
                   <span className="font-bold text-xl">{tdeeResult}</span>{" "}
-                  calories/day
+                  {t("calculator.tdee.calories")}
                 </p>
                 <p className="text-[#9CA3AF] text-center text-sm mt-1">
-                  This is your maintenance calorie intake
+                  {t("calculator.tdee.maintenance")}
                 </p>
               </div>
             )}
@@ -287,7 +275,10 @@ const Calculator = () => {
 
           {/* One-Rep Max Calculator */}
           <div className="bg-[#1F2937] rounded-lg p-4 sm:p-6 shadow-xl transition-transform hover:shadow-2xl hover:-translate-y-1 duration-300 sm:col-span-2 lg:col-span-1">
-            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center">
+            <h2
+              className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center group relative"
+              title={t("calculator.tooltips.orm")}
+            >
               <svg
                 className="w-5 h-5 sm:w-6 sm:h-6 mr-2 text-[#DC2626]"
                 fill="none"
@@ -301,52 +292,39 @@ const Calculator = () => {
                   d="M19 14l-7 7m0 0l-7-7m7 7V3"
                 />
               </svg>
-              1RM Calculator
+              {t("calculator.orm.title")}
             </h2>
             <form onSubmit={calculateORM}>
-              <div className="mb-4">
-                <label className="block text-white text-sm font-medium mb-2">
-                  Weight Lifted (kg)
-                </label>
-                <input
-                  type="number"
-                  value={ormWeight}
-                  onChange={(e) => setOrmWeight(e.target.value)}
-                  className="w-full p-2 rounded-md bg-[#374151] text-white border border-[#4B5563] focus:outline-none focus:ring-2 focus:ring-[#DC2626]"
-                  placeholder="e.g. 100"
-                  required
-                />
-              </div>
-              <div className="mb-6">
-                <label className="block text-white text-sm font-medium mb-2">
-                  Reps Performed
-                </label>
-                <input
-                  type="number"
-                  value={ormReps}
-                  onChange={(e) => setOrmReps(e.target.value)}
-                  className="w-full p-2 rounded-md bg-[#374151] text-white border border-[#4B5563] focus:outline-none focus:ring-2 focus:ring-[#DC2626]"
-                  placeholder="e.g. 8"
-                  max="36"
-                  required
-                />
-              </div>
+              <InputField
+                label={t("calculator.orm.weight")}
+                placeholder="e.g. 100"
+                value={ormWeight}
+                onChange={(e) => setOrmWeight(e.target.value)}
+              />
+              <InputField
+                label={t("calculator.orm.reps")}
+                placeholder="e.g. 8"
+                value={ormReps}
+                onChange={(e) => setOrmReps(e.target.value)}
+                max={36}
+                className="mb-6"
+              />
               <button
                 type="submit"
                 className="w-full bg-[#DC2626] text-white py-2 px-4 rounded-md hover:bg-[#B91C1C] transition duration-300 font-bold"
               >
-                Calculate 1RM
+                {t("calculator.orm.calculateButton")}
               </button>
             </form>
 
             {ormResult && (
               <div className="mt-6 p-4 bg-[#111827] rounded-md">
                 <p className="text-white text-center">
-                  Your estimated 1RM:{" "}
+                  {t("calculator.orm.result")}{" "}
                   <span className="font-bold text-xl">{ormResult} kg</span>
                 </p>
                 <p className="text-[#9CA3AF] text-center text-sm mt-1">
-                  Maximum weight you can lift for one rep
+                  {t("calculator.orm.maxWeight")}
                 </p>
               </div>
             )}
@@ -356,42 +334,34 @@ const Calculator = () => {
         {/* Explanation Section */}
         <div className="mt-10 sm:mt-12 lg:mt-16 bg-[#1F2937] rounded-lg p-4 sm:p-6 md:p-8 shadow-xl">
           <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 md:mb-6">
-            Understanding the Calculators
+            {t("calculator.explanation.title")}
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             <div className="bg-[#111827]/50 p-4 rounded-lg">
               <h3 className="text-lg md:text-xl font-semibold text-[#DC2626] mb-2">
-                BMI Calculator
+                {t("calculator.explanation.bmi.title")}
               </h3>
               <p className="text-[#9CA3AF] text-sm sm:text-base">
-                Body Mass Index (BMI) is a measure of body fat based on height
-                and weight. It's a screening tool that can indicate whether you
-                are underweight, normal weight, overweight, or obese.
+                {t("calculator.explanation.bmi.description")}
               </p>
             </div>
 
             <div className="bg-[#111827]/50 p-4 rounded-lg">
               <h3 className="text-lg md:text-xl font-semibold text-[#DC2626] mb-2">
-                TDEE Calculator
+                {t("calculator.explanation.tdee.title")}
               </h3>
               <p className="text-[#9CA3AF] text-sm sm:text-base">
-                Total Daily Energy Expenditure (TDEE) estimates how many
-                calories you burn per day. It accounts for your basal metabolic
-                rate and physical activity level to determine your maintenance
-                calories.
+                {t("calculator.explanation.tdee.description")}
               </p>
             </div>
 
             <div className="bg-[#111827]/50 p-4 rounded-lg md:col-span-2 lg:col-span-1">
               <h3 className="text-lg md:text-xl font-semibold text-[#DC2626] mb-2">
-                1RM Calculator
+                {t("calculator.explanation.orm.title")}
               </h3>
               <p className="text-[#9CA3AF] text-sm sm:text-base">
-                One Repetition Maximum (1RM) estimates the maximum weight you
-                can lift for a single repetition of an exercise. This helps
-                track strength progress and determine appropriate training
-                weights.
+                {t("calculator.explanation.orm.description")}
               </p>
             </div>
           </div>

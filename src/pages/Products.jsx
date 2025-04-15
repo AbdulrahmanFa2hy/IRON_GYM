@@ -272,7 +272,7 @@ const Products = () => {
                   </div>
                   <input
                     type="text"
-                    className="w-full pl-10 pr-4 py-3 rounded-lg border border-[#374151] bg-[#111827] text-white placeholder-[#9CA3AF] focus:outline-none focus:ring-2 focus:ring-[#DC2626]"
+                    className="w-full pl-10 pr-4 py-2 rounded-lg border border-[#374151] bg-[#111827] text-white placeholder-[#9CA3AF] focus:outline-none focus:ring-2 focus:ring-[#DC2626]"
                     placeholder="Search products..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
