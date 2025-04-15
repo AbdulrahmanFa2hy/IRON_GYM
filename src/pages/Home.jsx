@@ -3,9 +3,6 @@ import { useTranslation } from "react-i18next";
 
 // Import images from assets
 import heroImg from "../assets/gym-img-1.jpg";
-import muscleImg from "../assets/gym-img-2.jpg";
-import yogaImg from "../assets/gym-img-3.jpg";
-import weightliftingImg from "../assets/gym-img-4.jpg";
 import trainerImg from "../assets/gym-img-5.jpg";
 import calculatorImg from "../assets/gym-img-6.jpg";
 import testimonialAvatar from "../assets/gym-img-7.jpg";
@@ -88,11 +85,7 @@ const Home = () => {
       <HeroSection heroImg={heroImg} scrollY={scrollY} isVisible={isVisible} />
 
       {/* Programs Section */}
-      <ProgramsSection
-        cardioImg={muscleImg}
-        bulkingImg={yogaImg}
-        cuttingImg={weightliftingImg}
-      />
+      <ProgramsSection />
 
       {/* Why Join Us Section */}
       <WhyJoinUsSection trainerImg={trainerImg} />

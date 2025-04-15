@@ -148,5 +148,22 @@
       "tdee": "Total Daily Energy Expenditure - The number of calories you burn in a day",
       "orm": "One Repetition Maximum - The maximum weight you can lift for one repetition"
     }
+  },
+  "footer": {
+    "description": "Transform your body, transform your life. Join IRON GYM today and start your journey to a stronger, healthier you with our 24/7 access and expert guidance.",
+    "contact": {
+      "title": "CONTACT",
+      "address": {
+        "line1": "El-Arish, behind Al-Refaay Mousqe",
+        "line2": "North Of Sinai"
+      },
+      "phone": "01210855655",
+      "email": "contact@irongym.com"
+    },
+    "hours": {
+      "title": "OPEN 24 HOURS",
+      "description": "7 days a week, including holidays"
+    },
+    "copyright": "© {{year}} IRONGYM. All rights reserved."
   }
 }

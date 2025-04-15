@@ -1,30 +1,36 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-[#0F1420] text-white pt-10 sm:pt-12 pb-6 sm:pb-8 px-4 sm:px-6 md:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6 md:gap-8">
           {/* Logo and description */}
           <div className="col-span-1 sm:col-span-2 lg:col-span-1">
-            <Link to="/" className="flex items-center mb-4 sm:mb-6 group">
-              <img
-                src="/android-chrome-192x192.png"
-                alt="IRONGYM"
-                className="h-8 sm:h-10 w-auto mr-2"
-              />
-              <span className="text-2xl sm:text-3xl font-extrabold text-[#DC2626] tracking-tighter font-['Oswald']">
-                IRON
-              </span>
-              <span className="text-2xl sm:text-3xl font-extrabold text-white group-hover:text-[#9CA3AF] transition-colors duration-300 font-['Oswald']">
-                GYM
-              </span>
-            </Link>
+            <div className="flex items-center">
+              <Link to="/" className="flex items-center group">
+                {/* Logo image */}
+                <img
+                  src="/android-chrome-192x192.png"
+                  alt="IRON GYM"
+                  className="h-8 sm:h-10 w-auto mr-2"
+                />
+                {/* IRON GYM text - Always LTR */}
+                <div className="ltr">
+                  <span className="text-2xl sm:text-3xl font-extrabold text-[#DC2626] tracking-tighter font-['Oswald']">
+                    IRON{" "}
+                  </span>
+                  <span className="text-2xl sm:text-3xl font-extrabold text-white transition-colors duration-300 font-['Oswald']">
+                    GYM
+                  </span>
+                </div>
+              </Link>
+            </div>
             <p className="text-[#9CA3AF] text-sm sm:text-base mt-2 sm:mt-4 mb-4 sm:mb-6 max-w-md">
-              We are dedicated to helping our members achieve their fitness
-              goals and live healthier lives. Our state-of-the-art facilities
-              and expert trainers are here to support you on your fitness
-              journey.
+              {t("footer.description")}
             </p>
             <div className="flex space-x-3 sm:space-x-4">
               {/* Social Media Icons */}
@@ -97,8 +103,8 @@ const Footer = () => {
 
           {/* Contact */}
           <div className="mt-2 sm:mt-0 lg:mx-auto">
-            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-white font-['Oswald']">
-              CONTACT
+            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-white">
+              {t("footer.contact.title")}
             </h3>
             <ul className="space-y-3">
               <li className="flex items-start">
@@ -123,9 +129,9 @@ const Footer = () => {
                   ></path>
                 </svg>
                 <span className="text-[#9CA3AF] text-xs sm:text-sm">
-                  4RF4+5RQ, Qesm Thaleth Al Arish
+                  {t("footer.contact.address.line1")}
                   <br />
-                  North Sinai Governorate 8954625
+                  {t("footer.contact.address.line2")}
                 </span>
               </li>
               <li className="flex items-start">
@@ -144,7 +150,7 @@ const Footer = () => {
                   ></path>
                 </svg>
                 <span className="text-[#9CA3AF] text-xs sm:text-sm">
-                  012 10855655
+                  {t("footer.contact.phone")}
                 </span>
               </li>
               <li className="flex items-start">
@@ -163,7 +169,7 @@ const Footer = () => {
                   ></path>
                 </svg>
                 <span className="text-[#9CA3AF] text-xs sm:text-sm">
-                  contact@irongym.com
+                  {t("footer.contact.email")}
                 </span>
               </li>
             </ul>
@@ -188,35 +194,21 @@ const Footer = () => {
                   ></path>
                 </svg>
                 <span className="text-white text-sm sm:text-base font-medium">
-                  OPEN 24 HOURS
+                  {t("footer.hours.title")}
                 </span>
               </div>
               <span className="text-[#9CA3AF] text-xs sm:text-sm mt-2 text-center">
-                7 days a week, including holidays
+                {t("footer.hours.description")}
               </span>
             </div>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-[#1F2937] mt-8 sm:mt-12 pt-6 flex flex-col sm:flex-row justify-between items-center">
+        <div className="border-t border-[#1F2937] mt-8 sm:mt-12 pt-6 flex flex-col sm:flex-row justify-center items-center">
           <p className="text-[#9CA3AF] text-xs sm:text-sm mb-4 sm:mb-0 text-center sm:text-left">
-            © {new Date().getFullYear()} IRONGYM. All rights reserved.
+            {t("footer.copyright", { year: new Date().getFullYear() })}
           </p>
-          <div className="flex justify-center space-x-4">
-            <a
-              href="#"
-              className="text-xs sm:text-sm text-[#9CA3AF] hover:text-[#DC2626] transition-colors duration-300"
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="#"
-              className="text-xs sm:text-sm text-[#9CA3AF] hover:text-[#DC2626] transition-colors duration-300"
-            >
-              Terms of Service
-            </a>
-          </div>
         </div>
       </div>
     </footer>

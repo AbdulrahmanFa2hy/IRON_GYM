@@ -62,15 +62,15 @@ const Navbar = () => {
               {/* Logo image */}
               <img
                 src="/android-chrome-192x192.png"
-                alt="IRONGYM"
+                alt="IRON GYM"
                 className="h-8 sm:h-10 w-auto mr-2"
               />
               {/* IRON GYM text - Always LTR */}
               <div className="ltr">
                 <span className="text-2xl sm:text-3xl font-extrabold text-[#DC2626] tracking-tighter font-['Oswald']">
-                  IRON
+                  IRON{" "}
                 </span>
-                <span className="text-2xl sm:text-3xl font-extrabold text-white group-hover:text-[#9CA3AF] transition-colors duration-300 font-['Oswald']">
+                <span className="text-2xl sm:text-3xl font-extrabold text-white transition-colors duration-300 font-['Oswald']">
                   GYM
                 </span>
               </div>
