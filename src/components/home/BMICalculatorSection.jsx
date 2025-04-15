@@ -1,28 +1,29 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 
 const BMICalculatorSection = ({ calculatorImg }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="py-12 sm:py-16 md:py-20 bg-gradient-to-r from-[#0F0F17] to-[#320D0D]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 ">
-              CALCULATE
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">
+              {t("bmiCalculator.title")}
             </h2>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#DC2626] mb-4 sm:mb-6 ">
-              YOUR BMI
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#DC2626] mb-4 sm:mb-6">
+              {t("bmiCalculator.subtitle")}
             </h1>
-            <p className="text-sm sm:text-base text-[#9CA3AF] mb-6 sm:mb-8 ">
-              Take the first step toward better health by calculating your Body
-              Mass Index (BMI). This simple measurement helps evaluate your body
-              composition and overall health risk factors.
+            <p className="text-sm sm:text-base text-[#9CA3AF] mb-6 sm:mb-8">
+              {t("bmiCalculator.description")}
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
               <div>
                 <label className="block text-white text-sm font-medium mb-2">
-                  Height (cm)
+                  {t("bmiCalculator.height")}
                 </label>
                 <input
                   type="number"
@@ -32,7 +33,7 @@ const BMICalculatorSection = ({ calculatorImg }) => {
               </div>
               <div>
                 <label className="block text-white text-sm font-medium mb-2">
-                  Weight (kg)
+                  {t("bmiCalculator.weight")}
                 </label>
                 <input
                   type="number"
@@ -44,9 +45,9 @@ const BMICalculatorSection = ({ calculatorImg }) => {
 
             <Link
               to="/calculator"
-              className="bg-[#DC2626] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-md  font-bold hover:bg-[#B91C1C] transition duration-300 inline-flex items-center"
+              className="bg-[#DC2626] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-md font-bold hover:bg-[#B91C1C] transition duration-300 inline-flex items-center"
             >
-              <span className="mr-2">Calculate Now</span>
+              <span className="mr-2">{t("bmiCalculator.calculateButton")}</span>
               <svg
                 className="w-4 h-4"
                 fill="none"

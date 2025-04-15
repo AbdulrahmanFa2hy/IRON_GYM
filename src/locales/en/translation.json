@@ -63,5 +63,20 @@
       "title": "OPEN 24/7",
       "description": "Train whenever it suits you with our 24/7 access. Whether you're an early bird or a night owl, our gym is always open to help you achieve your fitness goals."
     }
+  },
+  "bmiCalculator": {
+    "title": "CALCULATE",
+    "subtitle": "YOUR BMI",
+    "description": "Take the first step toward better health by calculating your Body Mass Index (BMI). This simple measurement helps evaluate your body composition and overall health risk factors.",
+    "height": "Height (cm)",
+    "weight": "Weight (kg)",
+    "calculateButton": "Calculate Now"
+  },
+  "testimonial": {
+    "title": "Heroes Feedback",
+    "subtitle": "Get inspired by others",
+    "quote": "IRONGYM has completely changed my life. The trainers are exceptional, providing personalized attention that helped me achieve results I never thought possible. In just six months, I've transformed both physically and mentally.",
+    "clientName": "Abulrahman Fathy",
+    "clientTitle": "Premium Member"
   }
 }
