@@ -89,9 +89,9 @@ const Home = () => {
 
       {/* Programs Section */}
       <ProgramsSection
-        muscleImg={muscleImg}
-        yogaImg={yogaImg}
-        weightliftingImg={weightliftingImg}
+        cardioImg={muscleImg}
+        bulkingImg={yogaImg}
+        cuttingImg={weightliftingImg}
       />
 
       {/* Why Join Us Section */}

@@ -1,15 +1,15 @@
 {
   "hero": {
     "badge": "Strength & Conditioning",
-    "title": "BUILD YOUR IDEAL PHYSIQUE",
+    "title": "Build Your Perfect Body",
     "description": "Join IRON GYM, where passion meets performance. Our state-of-the-art facilities and expert trainers are dedicated to helping you achieve your fitness goals and transform your life.",
-    "joinButton": "Join Now",
-    "watchButton": "Explore Gym"
+    "joinButton": "Start Your Journey",
+    "watchButton": "Explore the Gym"
   },
   "stats": {
-    "happyClients": "HAPPY CLIENTS",
-    "experiencedTrainers": "EXPERIENCED TRAINERS",
-    "fitnessPrograms": "FITNESS PROGRAMS"
+    "happyClients": "Happy Clients",
+    "experiencedTrainers": "Experienced Trainers",
+    "fitnessPrograms": "Fitness Programs"
   },
   "featured": {
     "title": "Featured Products",
@@ -27,5 +27,41 @@
     "products": "Products",
     "calculators": "Calculators",
     "contact": "Contact"
+  },
+  "programs": {
+    "title": "OUR PROGRAM",
+    "subtitle": "BUILD YOUR BEST BODY",
+    "description": "Looking to start a new routine at the gym? Try our specially designed workouts led by expert trainers to build strength and confidence.",
+    "cutting": {
+      "title": "CUTTING",
+      "description": "Achieve a lean, defined physique with our cutting program designed to reduce body fat while maintaining muscle mass through targeted exercises and nutrition.",
+      "learnMore": "LEARN MORE"
+    },
+    "bulking": {
+      "title": "BULKING",
+      "description": "Build significant muscle mass with our bulking program, combining progressive overload training with proper nutrition to maximize muscle growth.",
+      "learnMore": "LEARN MORE"
+    },
+    "cardio": {
+      "title": "CARDIO",
+      "description": "Improve your cardiovascular health and endurance with our diverse cardio program, featuring HIIT, steady-state cardio, and functional training.",
+      "learnMore": "LEARN MORE"
+    }
+  },
+  "whyJoinUs": {
+    "title": "WHY",
+    "joinUs": "JOIN US?",
+    "professionalTrainer": {
+      "title": "PROFESSIONAL TRAINER",
+      "description": "Our certified personal trainers create customized workout plans tailored to your specific goals, ensuring you maximize every session."
+    },
+    "goodManagement": {
+      "title": "GOOD MANAGEMENT",
+      "description": "Our dedicated staff ensures all equipment is well-maintained, facilities are clean, and your experience is seamless from check-in to check-out."
+    },
+    "open247": {
+      "title": "OPEN 24/7",
+      "description": "Train whenever it suits you with our 24/7 access. Whether you're an early bird or a night owl, our gym is always open to help you achieve your fitness goals."
+    }
   }
 }

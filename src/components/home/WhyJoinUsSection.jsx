@@ -1,6 +1,29 @@
 import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
+import { FaUserTie, FaUsersCog, FaClock } from "react-icons/fa";
+import { GiStrong, GiStrongMan } from "react-icons/gi";
 
 const WhyJoinUsSection = ({ trainerImg }) => {
+  const { t } = useTranslation();
+
+  const features = [
+    {
+      icon: <GiStrongMan className="w-8 h-8 text-primary" />,
+      title: t("whyJoinUs.professionalTrainer.title"),
+      description: t("whyJoinUs.professionalTrainer.description"),
+    },
+    {
+      icon: <FaUsersCog className="w-6 h-6 text-primary" />,
+      title: t("whyJoinUs.goodManagement.title"),
+      description: t("whyJoinUs.goodManagement.description"),
+    },
+    {
+      icon: <FaClock className="w-6 h-6 text-primary" />,
+      title: t("whyJoinUs.open247.title"),
+      description: t("whyJoinUs.open247.description"),
+    },
+  ];
+
   return (
     <div className="py-12 sm:py-16 md:py-20 bg-[#0F1420]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -13,44 +36,24 @@ const WhyJoinUsSection = ({ trainerImg }) => {
             />
           </div>
           <div className="order-1 md:order-2">
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-2 ">
-              WHY <span className="text-[#DC2626]">JOIN US?</span>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-2">
+              {t("whyJoinUs.title")}{" "}
+              <span className="text-[#DC2626]">{t("whyJoinUs.joinUs")}</span>
             </h2>
             <div className="w-16 sm:w-24 h-1 bg-[#DC2626] mb-6 sm:mb-8"></div>
 
             <div className="space-y-6 sm:space-y-8">
-              <div>
-                <h3 className="text-lg sm:text-xl font-bold text-[#DC2626] mb-2 ">
-                  PROFESSIONAL TRAINER
-                </h3>
-                <p className="text-sm sm:text-base text-[#9CA3AF] ">
-                  Our certified personal trainers create customized workout
-                  plans tailored to your specific goals, ensuring you maximize
-                  every session.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-lg sm:text-xl font-bold text-[#DC2626] mb-2 ">
-                  GOOD MANAGEMENT
-                </h3>
-                <p className="text-sm sm:text-base text-[#9CA3AF] ">
-                  Our dedicated staff ensures all equipment is well-maintained,
-                  facilities are clean, and your experience is seamless from
-                  check-in to check-out.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-lg sm:text-xl font-bold text-[#DC2626] mb-2 ">
-                  PRACTICE VIDEOS
-                </h3>
-                <p className="text-sm sm:text-base text-[#9CA3AF] ">
-                  Access our extensive library of instructional videos to
-                  perfect your form and technique even when you're not at the
-                  gym.
-                </p>
-              </div>
+              {features.map((feature, index) => (
+                <div key={index}>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#DC2626] mb-2 flex gap-2 items-center">
+                    {feature.title}
+                    {feature.icon}
+                  </h3>
+                  <p className="text-sm sm:text-base text-[#9CA3AF]">
+                    {feature.description}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
