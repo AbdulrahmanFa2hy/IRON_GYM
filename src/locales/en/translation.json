@@ -1,0 +1,31 @@
+{
+  "hero": {
+    "badge": "Strength & Conditioning",
+    "title": "BUILD YOUR IDEAL PHYSIQUE",
+    "description": "Join IRON GYM, where passion meets performance. Our state-of-the-art facilities and expert trainers are dedicated to helping you achieve your fitness goals and transform your life.",
+    "joinButton": "Join Now",
+    "watchButton": "Explore Gym"
+  },
+  "stats": {
+    "happyClients": "HAPPY CLIENTS",
+    "experiencedTrainers": "EXPERIENCED TRAINERS",
+    "fitnessPrograms": "FITNESS PROGRAMS"
+  },
+  "featured": {
+    "title": "Featured Products",
+    "viewAll": "View All Products",
+    "bestSeller": "Best Seller",
+    "new": "New"
+  },
+  "products": {
+    "supplements": "Supplements",
+    "equipment": "Equipment",
+    "accessories": "Accessories"
+  },
+  "navbar": {
+    "home": "Home",
+    "products": "Products",
+    "calculators": "Calculators",
+    "contact": "Contact"
+  }
+}

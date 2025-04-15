@@ -1,0 +1,31 @@
+{
+  "hero": {
+    "badge": "القوة والتكييف",
+    "title": "ابن جسدك المثالي",
+    "description": "انضم إلى IRON GYM، حيث يلتقي الشغف بالأداء. مرافقنا الحديثة ومدربونا الخبراء مكرسون لمساعدتك في تحقيق أهداف لياقتك البدنية وتحويل حياتك.",
+    "joinButton": "انضم الآن",
+    "watchButton": "استكشف النادي"
+  },
+  "stats": {
+    "happyClients": "عملاء سعداء",
+    "experiencedTrainers": "مدربين ذوي خبرة",
+    "fitnessPrograms": "برامج لياقة بدنية"
+  },
+  "featured": {
+    "title": "المنتجات المميزة",
+    "viewAll": "عرض جميع المنتجات",
+    "bestSeller": "الأكثر مبيعاً",
+    "new": "جديد"
+  },
+  "products": {
+    "supplements": "المكملات",
+    "equipment": "المعدات",
+    "accessories": "الملحقات"
+  },
+  "navbar": {
+    "home": "الرئيسية",
+    "products": "المنتجات",
+    "calculators": "الحاسبات",
+    "contact": "اتصل بنا"
+  }
+}
