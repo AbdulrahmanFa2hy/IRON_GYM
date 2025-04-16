@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 // Import product images from the products directory
 import product1Img from "../assets/products/product-1.jpeg";
@@ -13,6 +14,7 @@ import product8Img from "../assets/products/product-8.jpeg";
 import product9Img from "../assets/products/product-9.jpeg";
 
 const Products = () => {
+  const { t } = useTranslation();
   // State for filter and sort
   const [category, setCategory] = useState("all");
   const [sortBy, setSortBy] = useState("featured");
@@ -167,9 +169,9 @@ const Products = () => {
   // Sort products
   const sortedProducts = [...filteredProducts].sort((a, b) => {
     switch (sortBy) {
-      case "price-low":
+      case "priceLow":
         return a.price - b.price;
-      case "price-high":
+      case "priceHigh":
         return b.price - a.price;
       case "rating":
         return b.rating - a.rating;
@@ -202,12 +204,12 @@ const Products = () => {
           }`}
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-4 ">
-            OUR <span className="text-[#DC2626]">PRODUCTS</span>
+            {t("products.title")}{" "}
+            <span className="text-[#DC2626]">{t("products.subtitle")}</span>
           </h1>
           <div className="w-16 sm:w-24 h-1 bg-[#DC2626] mx-auto mb-4 md:mb-6"></div>
           <p className="text-[#9CA3AF] text-sm sm:text-base md:text-lg max-w-3xl mx-auto">
-            Browse our premium selection of fitness equipment, supplements, and
-            accessories to help you reach your goals faster.
+            {t("products.description")}
           </p>
         </div>
 
@@ -219,7 +221,9 @@ const Products = () => {
             aria-expanded={activeFilters}
           >
             <span className="font-medium">
-              {activeFilters ? "Hide Filter & Sort" : "Show Filter & Sort"}
+              {activeFilters
+                ? t("products.filters.hide")
+                : t("products.filters.show")}
             </span>
             <svg
               className={`w-5 h-5 transition-transform duration-300 ${
@@ -273,7 +277,7 @@ const Products = () => {
                   <input
                     type="text"
                     className="w-full pl-10 pr-4 py-2 rounded-lg border border-[#374151] bg-[#111827] text-white placeholder-[#9CA3AF] focus:outline-none focus:ring-2 focus:ring-[#DC2626]"
-                    placeholder="Search products..."
+                    placeholder={t("products.filters.search")}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                   />
@@ -286,10 +290,18 @@ const Products = () => {
                     onChange={(e) => setCategory(e.target.value)}
                     className="w-full p-2 rounded-lg border border-[#374151] bg-[#111827] text-white focus:outline-none focus:ring-2 focus:ring-[#DC2626]"
                   >
-                    <option value="all">All Categories</option>
-                    <option value="supplements">Supplements</option>
-                    <option value="equipment">Equipment</option>
-                    <option value="accessories">Accessories</option>
+                    <option value="all">
+                      {t("products.filters.categories.all")}
+                    </option>
+                    <option value="supplements">
+                      {t("products.filters.categories.supplements")}
+                    </option>
+                    <option value="equipment">
+                      {t("products.filters.categories.equipment")}
+                    </option>
+                    <option value="accessories">
+                      {t("products.filters.categories.accessories")}
+                    </option>
                   </select>
                 </div>
               </div>
@@ -301,10 +313,18 @@ const Products = () => {
                   onChange={(e) => setSortBy(e.target.value)}
                   className="w-full p-2 rounded-lg border border-[#374151] bg-[#111827] text-white focus:outline-none focus:ring-2 focus:ring-[#DC2626]"
                 >
-                  <option value="featured">Featured</option>
-                  <option value="price-low">Price: Low to High</option>
-                  <option value="price-high">Price: High to Low</option>
-                  <option value="rating">Highest Rated</option>
+                  <option value="featured">
+                    {t("products.filters.sort.featured")}
+                  </option>
+                  <option value="priceLow">
+                    {t("products.filters.sort.priceLow")}
+                  </option>
+                  <option value="priceHigh">
+                    {t("products.filters.sort.priceHigh")}
+                  </option>
+                  <option value="rating">
+                    {t("products.filters.sort.rating")}
+                  </option>
                 </select>
               </div>
             </div>
@@ -315,7 +335,7 @@ const Products = () => {
                 <div className="flex flex-wrap gap-2 mb-2 sm:mb-0">
                   {category !== "all" && (
                     <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#374151] text-white">
-                      {category.charAt(0).toUpperCase() + category.slice(1)}
+                      {t(`products.filters.categories.${category}`)}
                       <button
                         onClick={() => setCategory("all")}
                         className="ml-1 text-[#9CA3AF] hover:text-white"
@@ -338,11 +358,7 @@ const Products = () => {
                   )}
                   {sortBy !== "featured" && (
                     <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#374151] text-white">
-                      {sortBy === "price-low"
-                        ? "Price: Low to High"
-                        : sortBy === "price-high"
-                        ? "Price: High to Low"
-                        : "Highest Rated"}
+                      {t(`products.filters.sort.${sortBy}`)}
                       <button
                         onClick={() => setSortBy("featured")}
                         className="ml-1 text-[#9CA3AF] hover:text-white"
@@ -365,7 +381,7 @@ const Products = () => {
                   )}
                   {searchQuery && (
                     <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-[#374151] text-white">
-                      Search: "{searchQuery}"
+                      {t("products.filters.active.search")}: "{searchQuery}"
                       <button
                         onClick={() => setSearchQuery("")}
                         className="ml-1 text-[#9CA3AF] hover:text-white"
@@ -391,7 +407,7 @@ const Products = () => {
                   onClick={resetFilters}
                   className="text-sm text-[#DC2626] hover:text-white transition-colors duration-300"
                 >
-                  Reset All Filters
+                  {t("products.filters.active.reset")}
                 </button>
               </div>
             )}
@@ -427,7 +443,7 @@ const Products = () => {
                 {!product.inStock && (
                   <div className="absolute inset-0 bg-[#111827]/70 flex items-center justify-center">
                     <span className="text-white font-bold text-lg">
-                      Out of Stock
+                      {t("products.product.outOfStock")}
                     </span>
                   </div>
                 )}
@@ -445,8 +461,7 @@ const Products = () => {
                 </div>
                 <div className="mb-3 flex items-center justify-between">
                   <span className="inline-block text-xs font-semibold text-[#9CA3AF] px-2 py-1 bg-[#111827] rounded-full">
-                    {product.category.charAt(0).toUpperCase() +
-                      product.category.slice(1)}
+                    {t(`products.filters.categories.${product.category}`)}
                   </span>
 
                   <div className="flex items-center">
@@ -483,13 +498,17 @@ const Products = () => {
                     } px-3 sm:px-4 py-2 rounded-lg transition-colors duration-300 text-xs sm:text-sm font-bold`}
                     disabled={!product.inStock}
                   >
-                    {product.inStock ? "Add to Cart" : "Out of Stock"}
+                    {product.inStock
+                      ? t("products.product.addToCart")
+                      : t("products.product.outOfStock")}
                   </button>
                   <Link
                     to={`/products/${product.id}`}
                     className="text-[#DC2626] hover:text-white transition-colors duration-300 flex items-center"
                   >
-                    <span className="mr-1 text-xs sm:text-sm">Details</span>
+                    <span className="mr-1 text-xs sm:text-sm">
+                      {t("products.product.details")}
+                    </span>
                     <svg
                       className="w-3 h-3 sm:w-4 sm:h-4"
                       fill="none"
@@ -527,18 +546,17 @@ const Products = () => {
               />
             </svg>
             <h3 className="mt-4 text-lg sm:text-xl font-medium text-white">
-              No products found
+              {t("products.empty.title")}
             </h3>
             <p className="mt-2 text-[#9CA3AF] text-sm sm:text-base max-w-md mx-auto">
-              Try adjusting your search or filters to find what you're looking
-              for.
+              {t("products.empty.description")}
             </p>
             <div className="mt-6">
               <button
                 onClick={resetFilters}
                 className="inline-flex items-center px-6 py-3 border border-transparent text-sm sm:text-base font-medium rounded-md shadow-sm text-white bg-[#DC2626] hover:bg-[#B91C1C] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#DC2626] transition-colors duration-300"
               >
-                Reset Filters
+                {t("products.empty.reset")}
               </button>
             </div>
           </div>
@@ -552,7 +570,9 @@ const Products = () => {
                 href="#"
                 className="relative inline-flex items-center px-2 py-2 rounded-l-md bg-[#1F2937] text-sm font-medium text-[#9CA3AF] hover:bg-[#374151] transition-colors duration-300"
               >
-                <span className="sr-only">Previous</span>
+                <span className="sr-only">
+                  {t("products.pagination.previous")}
+                </span>
                 <svg
                   className="h-5 w-5"
                   fill="none"
@@ -583,7 +603,7 @@ const Products = () => {
                 href="#"
                 className="relative inline-flex items-center px-2 py-2 rounded-r-md bg-[#1F2937] text-sm font-medium text-[#9CA3AF] hover:bg-[#374151] transition-colors duration-300"
               >
-                <span className="sr-only">Next</span>
+                <span className="sr-only">{t("products.pagination.next")}</span>
                 <svg
                   className="h-5 w-5"
                   fill="none"

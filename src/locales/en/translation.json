@@ -6,11 +6,7 @@
     "joinButton": "Start Your Journey",
     "watchButton": "Explore the Gym"
   },
-  "stats": {
-    "happyClients": "Happy Clients",
-    "experiencedTrainers": "Experienced Trainers",
-    "fitnessPrograms": "Fitness Programs"
-  },
+
   "featured": {
     "title": "Featured Products",
     "viewAll": "View All Products",
@@ -18,9 +14,50 @@
     "new": "New"
   },
   "products": {
-    "supplements": "Supplements",
-    "equipment": "Equipment",
-    "accessories": "Accessories"
+    "title": "OUR",
+    "subtitle": "PRODUCTS",
+    "description": "Browse our premium selection of fitness equipment, supplements, and accessories to help you reach your goals faster",
+    "filters": {
+      "show": "Show Filter & Sort",
+      "hide": "Hide Filter & Sort",
+      "search": "Search products...",
+      "categories": {
+        "all": "All Categories",
+        "supplements": "Supplements",
+        "equipment": "Equipment",
+        "accessories": "Accessories"
+      },
+      "sort": {
+        "featured": "All Products",
+        "priceLow": "Price: Low to High",
+        "priceHigh": "Price: High to Low",
+        "rating": "Highest Rated"
+      },
+      "active": {
+        "search": "Search",
+        "reset": "Reset All Filters"
+      }
+    },
+    "product": {
+      "outOfStock": "Out of Stock",
+      "addToCart": "Add to Cart",
+      "details": "Details",
+      "rating": "Rating"
+    },
+    "empty": {
+      "title": "No products found",
+      "description": "Try adjusting your search or filters to find what you're looking for.",
+      "reset": "Reset Filters"
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "tooltips": {
+      "bmi": "Body Mass Index Calculator",
+      "tdee": "Total Daily Energy Expenditure Calculator",
+      "orm": "One Rep Maximum Calculator"
+    }
   },
   "navbar": {
     "home": "Home",

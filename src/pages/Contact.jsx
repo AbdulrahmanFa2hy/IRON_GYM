@@ -26,7 +26,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-[#111827] min-h-screen pt-20 pb-8 sm:pb-12 px-4 sm:px-6 md:px-8 lg:pt-24">
+    <div className="bg-[#111827] min-h-screen pt-20 pb-12 px-4 sm:px-6 md:px-8 lg:pt-24">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-10 md:mb-14">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-4">
@@ -39,8 +39,8 @@ const Contact = () => {
           </p>
         </div>
         {/* Hours of Operation Section */}
-        <div className="mt-12 mb-6 sm:mb-8">
-          <div className="bg-[#1F2937] p-4 sm:p-8 rounded-lg shadow-xl transform transition-all duration-300 hover:shadow-2xl">
+        <div className="mt-12 sm:mb-8">
+          <div className="bg-[#1F2937] p-6 sm:p-8 rounded-lg shadow-xl transform transition-all duration-300 hover:shadow-2xl">
             <div className="flex justify-center">
               <div className="flex flex-col items-center">
                 <div className="w-60 h-30 flex items-center justify-center">
@@ -74,7 +74,7 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
           {/* Contact Information */}
-          <div className="bg-[#1F2937] p-4 sm:p-8 rounded-lg shadow-xl transform transition-all duration-300 hover:shadow-2xl">
+          <div className="bg-[#1F2937] p-6 sm:p-8 rounded-lg shadow-xl transform transition-all duration-300 hover:shadow-2xl">
             <div className="space-y-6 md:space-y-8">
               <div className="flex items-start gap-2 sm:gap-4 ">
                 <div className="flex-shrink-0 bg-[#111827] p-3 rounded-full">
@@ -221,7 +221,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-[#1F2937] p-4 sm:p-8 rounded-lg shadow-xl transform transition-all duration-300 hover:shadow-2xl">
+          <div className="bg-[#1F2937] p-6 sm:p-8 rounded-lg shadow-xl transform transition-all duration-300 hover:shadow-2xl">
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-6">
               {t("contact.form.title")}
             </h2>
@@ -291,9 +291,9 @@ const Contact = () => {
         </div>
 
         {/* Map Section */}
-        <div className="mt-8 sm:mt-16">
-          <div className="bg-[#1F2937] p-2 sm:p-4 rounded-lg shadow-xl transform transition-all duration-300 hover:shadow-2xl">
-            <div className="relative w-full h-[50vh] md:h-[75vh] rounded-lg overflow-hidden">
+        <div className="mt-12 sm:mt-16">
+          <div className="bg-[#1F2937] p-2 sm:p-4 rounded-md shadow-xl mb-6">
+            <div className="relative w-full h-[50vh] md:h-[75vh] rounded-md overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3419.025443360017!2d33.80466727622767!3d31.122783974389587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14fdd334a26db7bb%3A0xd4d5ef01f79e4d17!2sIron%20gym!5e0!3m2!1sen!2sus!4v1718306153999!5m2!1sen!2sus&mode=dark"
                 width="100%"
