@@ -20,10 +20,10 @@ const Footer = () => {
                 />
                 {/* IRON GYM text - Always LTR */}
                 <div className="ltr">
-                  <span className="text-2xl sm:text-3xl font-extrabold text-[#DC2626] tracking-tighter font-['Oswald']">
+                  <span className="text-2xl sm:text-3xl font-extrabold text-[#DC2626] tracking-tighter">
                     IRON{" "}
                   </span>
-                  <span className="text-2xl sm:text-3xl font-extrabold text-white transition-colors duration-300 font-['Oswald']">
+                  <span className="text-2xl sm:text-3xl font-extrabold text-white transition-colors duration-300">
                     GYM
                   </span>
                 </div>

@@ -18,6 +18,10 @@ export default {
           900: "#111827", // Card background
         },
       },
+      fontFamily: {
+        serif: ["Roboto Serif", "system-ui", "serif"],
+        arabic: ["Noto Naskh Arabic", "system-ui", "sans-serif"],
+      },
     },
   },
   plugins: [rtlPlugin],

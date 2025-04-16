@@ -67,10 +67,10 @@ const Navbar = () => {
               />
               {/* IRON GYM text - Always LTR */}
               <div className="ltr">
-                <span className="text-2xl sm:text-3xl font-extrabold text-[#DC2626] tracking-tighter font-['Oswald']">
+                <span className="text-2xl sm:text-3xl font-extrabold text-[#DC2626] tracking-tighter">
                   IRON{" "}
                 </span>
-                <span className="text-2xl sm:text-3xl font-extrabold text-white transition-colors duration-300 font-['Oswald']">
+                <span className="text-2xl sm:text-3xl font-extrabold text-white transition-colors duration-300">
                   GYM
                 </span>
               </div>
@@ -113,7 +113,7 @@ const Navbar = () => {
             <LanguageSwitcher />
             <Link
               to=""
-              className="bg-[#DC2626] text-white px-4 lg:px-5 py-2 rounded-md font-['Cairo'] text-sm lg:text-base font-bold hover:bg-[#B91C1C] transition-all duration-300 transform hover:scale-105 shadow-md"
+              className="bg-[#DC2626] text-white px-4 lg:px-5 py-2 rounded-md text-sm lg:text-base font-bold hover:bg-[#B91C1C] transition-all duration-300 transform hover:scale-105 shadow-md"
             >
               {t("hero.joinButton")}
             </Link>
@@ -183,7 +183,7 @@ const Navbar = () => {
           <div className="pt-2 pb-1">
             <Link
               to=""
-              className="block w-full bg-[#DC2626] text-white text-center py-2 sm:py-3 rounded-md font-['Cairo'] text-sm sm:text-base font-bold hover:bg-[#B91C1C] transition-colors duration-300"
+              className="block w-full bg-[#DC2626] text-white text-center py-2 sm:py-3 rounded-md text-sm sm:text-base font-bold hover:bg-[#B91C1C] transition-colors duration-300"
             >
               {t("hero.joinButton")}
             </Link>

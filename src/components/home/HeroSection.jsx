@@ -50,7 +50,7 @@ const HeroSection = ({ heroImg, scrollY, isVisible }) => {
               </h3>
             </div>
 
-            <h1 className="hero-heading text-4xl sm:text-5xl md:text-7xl font-extrabold text-white mb-4 leading-tight">
+            <h1 className="hero-heading text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4 leading-tight">
               {t("hero.title")}
               <br />
               <span

@@ -5,6 +5,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -24,6 +25,22 @@ function ScrollToTop() {
 }
 
 function App() {
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    // Set the dir attribute on the html element based on the current language
+    document.documentElement.dir = i18n.language === "ar" ? "rtl" : "ltr";
+    // Add the appropriate font class based on the language
+    document.documentElement.classList.toggle(
+      "font-arabic",
+      i18n.language === "ar"
+    );
+    document.documentElement.classList.toggle(
+      "font-serif",
+      i18n.language !== "ar"
+    );
+  }, [i18n.language]);
+
   return (
     <Router>
       <div className="min-h-screen bg-[#111827] text-white">
