@@ -39,7 +39,7 @@ const Contact = () => {
           </p>
         </div>
         {/* Hours of Operation Section */}
-        <div className="mt-12 sm:mb-8">
+        <div className="mt-12 mb-4 sm:mb-6">
           <div className="bg-[#1F2937] p-6 sm:p-8 rounded-lg shadow-xl transform transition-all duration-300 hover:shadow-2xl">
             <div className="flex justify-center">
               <div className="flex flex-col items-center">
@@ -72,7 +72,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 ">
           {/* Contact Information */}
           <div className="bg-[#1F2937] p-6 sm:p-8 rounded-lg shadow-xl transform transition-all duration-300 hover:shadow-2xl">
             <div className="space-y-6 md:space-y-8">
